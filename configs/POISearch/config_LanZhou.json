@@ -1,0 +1,3 @@
+{
+  "url": "http:/{gisServer}:25001/as/search/poi?ak={key}&query={searchText}&region=兰州&scope=2&page_size=9&page_num=1"
+}

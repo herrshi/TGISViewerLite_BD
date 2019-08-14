@@ -1,0 +1,95 @@
+{
+  "map": {
+    "basemaps": [
+      {
+        "label": "百度矢量地图",
+        "url": "http://online{s}.map.bdimg.com/onlinelabel/?qt=tile&x={x}&y={y}&z={z}&scaler=1&p=1",
+        "type": "BD_vec",
+        "visible": true
+      },
+      {
+        "label": "百度定制地图",
+        "url": "http://api{s}.map.bdimg.com/customimage/tile?&x={x}&y={y}&z={z}&scale=1",
+        "type": "BD_custom",
+        "style": "dark",
+        "visible": false
+      },
+      {
+        "label": "百度影像图",
+        "url": "http://shangetu{s}.map.bdimg.com/it/u=x={x};y={y};z={z};v=009;type=sate&fm=46",
+        "type": "BD_img",
+        "visible": false
+      },
+      {
+        "label": "百度影像标注",
+        "url": "http://online{s}.map.bdimg.com/tile/?qt=tile&x={x}&y={y}&z={z}&v=020",
+        "type": "BD_ano",
+        "visible": false
+      },
+      {
+        "label": "百度实时路况",
+        "url": "http://its.map.baidu.com:8002/traffic/TrafficTileService?x={x}&y={y}&level={z}&label=web2D&v=017",
+        "type": "BD_time",
+        "refreshInterval": 5,
+        "visible": false
+      }
+    ],
+    "mapOptions": {
+      "center": [31.4787623954,120.0938475722],
+      "zoom": 13,
+      "attributionControl":false
+    },
+    "coordinateSystem": "BD09",
+    "miniMap": {
+      "show": true,
+      "layer": "百度矢量地图"
+    }
+  },
+  "widgets": [
+    {
+      "uri": "widgets/BottomToolbar/Widget",
+      "name": "BottomToolbar",
+      "config": "configs/BottomToolbar/config_WuXiMaShan.json",
+      "position": {
+        "bottom": 10,
+        "width": "100%",
+        "left": 0,
+        "right": 0,
+        "relativeTo": "map",
+        "zIndex": 500
+      },
+      "id": "BottomToolbarWidget"
+    },
+    {
+      "uri": "widgets/Coordinate/Widget",
+      "id": "CoordinateWidget",
+      "position": {
+        "left": 15,
+        "bottom": 5,
+        "relativeTo": "map",
+        "zIndex": 600
+      }
+    },
+    {
+      "uri": "widgets/Overlay/Widget",
+      "name": "Overlay",
+      "config": "configs/Overlay/config_MaShan.json",
+      "id": "OverlayWidget"
+    },
+    {
+      "uri": "widgets/BasicDraw/Widget",
+      "name": "BasicDraw",
+      "id": "BasicDrawWidget"
+    },
+    {
+      "uri": "widgets/GeometrySearch/Widget",
+      "name": "GeometrySearch",
+      "id": "GeometrySearchWidget"
+    },
+    {
+      "uri": "widgets/TrackPlayback/Widget",
+      "name": "TrackPlaybackSearch",
+      "id": "TrackPlaybackWidget"
+    }
+  ]
+}

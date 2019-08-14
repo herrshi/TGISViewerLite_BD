@@ -1,0 +1,90 @@
+{
+  "map": {
+    "gisServer": "114.215.146.210",
+    "key": "88afd0522fbbb939bc7f7f075a763487",
+    "tmp": "ec85d3648154874552835438ac6a02b2",
+    "basemaps": [
+      {
+        "label": "MapABC",
+        "url": "http://{gisServer}:25003/v3/tile?z={z}&x={x}&y={y}",
+        "type": "tile",
+        "maxZoom": 18,
+        "minZoom": 4
+      }
+    ],
+    "mapOptions": {
+      "center": [36.046, 103.862],
+      "zoom": 13
+    },
+    "coordinateSystem": "GCJ02"
+  },
+  "widgets": [
+    {
+      "uri": "widgets/Overlay/Widget",
+      "id": "OverlayWidget"
+    },
+    {
+      "uri": "widgets/OD/Widget",
+      "id": "ODWidget"
+    },
+    {
+      "uri": "widgets/BasicDraw/Widget",
+      "id": "BasicDrawWidget"
+    },
+    {
+      "uri": "widgets/GeometrySearch/Widget",
+      "id": "GeometrySearchWidget"
+    },
+    {
+      "uri": "widgets/Coordinate/Widget",
+      "id": "CoordinateWidget",
+      "position": {
+        "left": 15,
+        "bottom": 5,
+        "relativeTo": "map",
+        "zIndex": 600
+      }
+    },
+    {
+      "uri": "widgets/BottomToolbar/Widget",
+      "name": "BottomToolbar",
+      "config": "configs/BottomToolbar/config_LanZhou.json",
+      "position": {
+        "bottom": 10,
+        "width": "100%",
+        "left": 0,
+        "right": 0,
+        "relativeTo": "map",
+        "zIndex": 500
+      },
+      "id": "BottomToolbarWidget"
+    },
+    {
+      "uri": "widgets/TrackPlayback/Widget",
+      "id": "TrackPlaybackWidget"
+    },
+    {
+      "uri": "widgets/POISearch/Widget",
+      "name": "POISearch",
+      "config": "configs/POISearch/config_LanZhou.json",
+      "position": {
+        "left": 60,
+        "top": 15,
+        "relativeTo": "map",
+        "zIndex": 0
+      },
+      "id": "POISearchWidget"
+    },
+    {
+      "uri": "widgets/Routing/Widget",
+      "name": "Routing",
+      "position": {
+        "left": 60,
+        "top": 120,
+        "relativeTo": "map",
+        "zIndex": 0
+      },
+      "id": "RoutingWidget"
+    }
+  ]
+}

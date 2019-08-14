@@ -1,0 +1,18 @@
+[
+  {
+    "type": "police",
+    "content":"<table border=\"1\" cellspacing=\"0\" bordercolor=\"#DBDBDB\" style=\"width: 300px;\">\t<tbody>\t\t<tr>\t\t\t<td width=\"100px;\" style=\"font-weight: bold;\">警员名称：</td>\t\t\t<td width=\"200px\">${policeName}</td>\t\t</tr>\t\t<tr>\t\t\t<td  style=\"font-weight: bold;\">警员编号：</td>\t\t\t<td >${policeSn}</td>\t\t</tr>\t\t<tr>\t\t\t<td  style=\"font-weight: bold;\">GPS时间：</td>\t\t\t<td >${gpsTime}</td>\t\t</tr>\t\t<tr>\t\t\t<td style=\"font-weight: bold;\">警员单位：</td>\t\t\t<td >${deptName}</td>\t\t</tr>\t\t<tr>\t\t\t<td  style=\"font-weight: bold;\">警员职务：</td>\t\t\t<td >${policeDuty}</td>\t\t</tr>\t\t<tr>\t\t\t<td style=\"font-weight: bold;\">警员级别：</td>\t\t\t<td >${policeLevel}</td>\t\t</tr>\t</tbody></table>"
+  },
+  {
+    "type": "alarm",
+    "content":"<table border=\"1\" cellspacing=\"0\" bordercolor=\"#DBDBDB\" style=\"width: 300px;\">\t<tbody>\t\t<tr>\t\t\t<td width=\"80px;\" style=\"font-weight: bold;\">警情描述：</td>\t\t\t<td width=\"240px\">${jqDescription}</td>\t\t</tr>\t\t<tr>\t\t\t<td width=\"80px;\" style=\"font-weight: bold;\">警情地址：</td>\t\t\t<td width=\"240px\">${jqAddress}</td>\t\t</tr>\t\t<tr>\t\t\t<td width=\"80px;\" style=\"font-weight: bold;\">发生时间：</td>\t\t\t<td width=\"240px\">${jqTime}</td>\t\t</tr>\t\t<tr>\t\t\t<td width=\"80px;\" style=\"font-weight: bold;\">报警人：</td>\t\t\t<td width=\"240px\">${informer}</td>\t\t</tr>\t\t<tr>\t\t\t<td width=\"80px;\" style=\"font-weight: bold;\">联系方式：</td>\t\t\t<td width=\"240px\">${informerPhone}</td>\t\t</tr>\t\t<tr>\t\t\t<td width=\"80px;\" style=\"font-weight: bold;\">处置描述：</td>\t\t\t<td width=\"240px\">${handleDescription}</td>\t\t</tr>\t\t<tr>\t\t\t<td width=\"80px;\" style=\"font-weight: bold;\">警情状态：</td>\t\t\t<td width=\"240px\">${jqStatusDesc}</td>\t\t</tr>\t</tbody></table>"
+  },
+  {
+    "type": "gz",
+    "content":"<table border=\"1\" cellspacing=\"0\" bordercolor=\"#DBDBDB\" style=\"width: 300px;\">\t<tbody>\t\t\t<tr>\t\t\t\t<td width=\"100px;\" style=\"font-weight: bold;\">任务编号：</td>\t\t\t\t<td width=\"200px\">${taskNo}</td>\t\t\t</tr>\t\t\t<tr>\t\t\t\t<td  style=\"font-weight: bold;\">任务名称：</td>\t\t\t\t<td >${taskName}</td>\t\t\t</tr>\t\t\t<tr>\t\t\t\t<td  style=\"font-weight: bold;\">任务概况：</td>\t\t\t\t<td >${taskDesc}</td>\t\t\t</tr>\t\t\t<tr>\t\t\t\t<td  style=\"font-weight: bold;\">任务类型：</td>\t\t\t\t<td >${taskType}</td>\t\t\t</tr>\t\t\t<tr>\t\t\t\t<td  style=\"font-weight: bold;\">任务级别：</td>\t\t\t\t<td >${taskLevel}</td>\t\t\t</tr>\t\t\t<tr>\t\t\t\t<td  style=\"font-weight: bold;\">管制时间：</td>\t\t\t\t<td >${gzTime}</td>\t\t\t</tr>\t\t\t<tr>\t\t\t\t<td  style=\"font-weight: bold;\">管制要求：</td>\t\t\t\t<td >${gzRequire}</td>\t\t\t</tr>\t\t\t<tr>\t\t\t\t<td  style=\"font-weight: bold;\">负责人：</td>\t\t\t\t<td >${gzDutyPerson}</td>\t\t\t</tr>\t\t</tbody>\t</table>"
+  },
+  {
+    "type": "gps",
+    "content":"<table border=\"1\" cellspacing=\"0\" bordercolor=\"#DBDBDB\" style=\"width: 300px;\">\t<tbody>\t\t<tr>\t\t\t<td width=\"100px;\" style=\"font-weight: bold;\">车辆号牌：</td>\t\t\t<td width=\"200px\">${carSn}</td>\t\t</tr>\t\t<tr>\t\t\t<td  style=\"font-weight: bold;\">单位：</td>\t\t\t<td >${carDept}</td>\t\t</tr>\t\t<tr>\t\t\t<td  style=\"font-weight: bold;\">GPS时间：</td>\t\t\t<td >${gpsTime}</td>\t\t</tr>\t</tbody></table>"
+  }
+]

@@ -1,0 +1,66 @@
+.jimu-widget-BottomToolbar {
+  margin: auto;
+  padding: 0;
+  text-align: center;
+}
+
+.jimu-widget-BottomToolbar .gis-tool-box {
+  top: 0;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.jimu-widget-BottomToolbar .gis-tool {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.jimu-widget-BottomToolbar .gis-tool-bg {
+  width: auto;
+}
+.jimu-widget-BottomToolbar .gis-tool-bg .lbg {
+  /*background: url(images/gis_bottombgL.png) no-repeat;*/
+  width: 12px;
+  height: 51px;
+}
+.jimu-widget-BottomToolbar .gis-tool-bg .mbg {
+  /*background: url(images/gis_bottombgC.png) repeat-x;*/
+  height: 51px;
+}
+.jimu-widget-BottomToolbar .gis-tool-bg .rbg {
+  /*background: url(images/gis_bottombgR.png) no-repeat;*/
+  width: 12px;
+  height: 51px;
+}
+
+.jimu-widget-BottomToolbar .btn-black {
+  color: #fff;
+  background-color: #263554;
+  border-color: #263554;
+}
+.jimu-widget-BottomToolbar .btn-black:hover {
+  color: #fff;
+  background-color: #36c6d3;
+  border-color: #36c6d3;
+}
+.jimu-widget-BottomToolbar .btn-active,
+.btn-active:focus,
+.btn-active:hover,
+.btn-active:active,
+.btn-active:active:hover {
+  color: #fff;
+  background-color: #36c6d3;
+  border-color: #36c6d3;
+}
+.jimu-widget-BottomToolbar .btn-disable,
+.btn-disable:focus,
+.btn-disable:hover,
+.btn-disable:active,
+.btn-disable:active:hover {
+  cursor: not-allowed;
+  color: #7c828d;
+  background-color: #4c576d;
+  border-color: #4c576d;
+}

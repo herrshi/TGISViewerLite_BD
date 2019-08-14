@@ -1,0 +1,93 @@
+{
+  "buttons": [
+  	{
+      "label": "警员",
+      "id": "police",
+      "image": "images/buttons/police-white.png",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["police"]
+        }
+      ]
+    },
+    {
+      "label": "实时路况",
+      "id": "fbd",
+      "image": "images/buttons/FBD-white.png",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["百度实时路况"]
+        }
+      ]
+    },
+    {
+      "label": "视频",
+      "id": "sxj",
+      "image": "images/buttons/sxj-white.png",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["视频"]
+        }
+      ]
+    },
+    {
+      "label": "事件",
+      "id": "alarm",
+      "image": "images/buttons/jingqing-white.png",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["视频"]
+        }
+      ]
+    },
+    {
+      "label": "管制",
+      "id": "gz",
+      "image": "images/buttons/guanzhi-white.png",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["管制"]
+        }
+      ]
+    },
+    {
+      "label": "GPS",
+      "id": "gps",
+      "image": "images/buttons/06.png",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["gps"]
+        }
+      ]
+    },
+    {
+      "label": "街景",
+      "id": "jj",
+      "image": "images/buttons/jiejing-white.png",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["jj"]
+        }
+      ]
+    },
+    {
+      "label": "全屏",
+      "id": "qp",
+      "image": "images/buttons/quanping-white.png",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["qp"]
+        }
+      ]
+    }
+    
+  ]
+}

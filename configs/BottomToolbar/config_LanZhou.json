@@ -1,0 +1,66 @@
+{
+  "buttons": [
+    {
+      "label": "摄像机",
+      "id": "SXJOverlay",
+      "image": "images/buttons/SheXiangJi-white.png",
+      "operations": [
+        {
+          "opName": "callPage"
+        }
+      ]
+    },
+    {
+      "label": "RFID",
+      "id": "RFID",
+      "image": "images/buttons/QingBaoBan-white.png",
+      "operations": [
+        {
+          "opName": "callPage"
+        }
+      ]
+    },
+    {
+      "label": "电子警察",
+      "id": "DZJCOverlay",
+      "image": "images/buttons/DiZiJingCha-white.png",
+      "operations": [
+        {
+          "opName": "callPage"
+        }
+      ]
+    },
+    {
+      "label": "卡口",
+      "id": "KKOverlay",
+      "image": "images/buttons/KaKou-white.png",
+      "operations": [
+        {
+          "opName": "callPage"
+        }
+      ]
+    },
+    {
+      "label": "兴趣点搜索",
+      "id": "POISearch",
+      "image": "images/buttons/search-white.png",
+      "operations": [
+        {
+          "opName": "openWidget",
+          "opParam": ["POISearchWidget"]
+        }
+      ]
+    },
+    {
+      "label": "路径规划",
+      "id": "Routing",
+      "image": "images/buttons/routing-white.png",
+      "operations": [
+        {
+          "opName": "openWidget",
+          "opParam": ["RoutingWidget"]
+        }
+      ]
+    }
+  ]
+}

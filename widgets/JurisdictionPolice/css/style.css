@@ -1,0 +1,10 @@
+.my-div-icon {
+  background: transparent;
+  border: 0;
+  width: 100px !important;
+  margin-left: 0;
+  margin-top: 0;
+  color: #45526e;
+  font-weight: bold;
+  font-size: 1.3rem;
+}

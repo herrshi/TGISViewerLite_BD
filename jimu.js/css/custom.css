@@ -1,0 +1,979 @@
+/* here you can put your own css to customize and override the theme */
+.page-content-inner {background-color:white; padding-top:20px;}
+ul,li { list-style:none;}
+
+/**重置bootstrap-table样式**/
+.table-list > thead > tr > th { background-color: #eef2f5;}
+
+/*socicon btn*/
+.socicon-btn-box { width: 100%}
+.socicon-btn-box ul { margin:0; padding:0;}
+.socicon-btn-box ul li { min-width:100px; text-align: center; display: inline-block; padding: 20px 0;}
+/*.socicon-btn-box ul li a span { display:block;}*/
+.socicon-btn-box ul li a font{display:block; font-size: 12px; padding-top: 5px;}
+.socicon-btn-box ul li a:hover font{ text-decoration: none;}
+.socicon-btn-box  ul li a .socicon-btn-custom  {
+  position: relative;
+  display: inline-block;
+  font-family: 'socicon';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  width: 70px;
+  height: 70px;
+  line-height: 62px;
+  font-size: 24px;
+  border: 6px solid #eef1f5;
+  color: #fff;
+  transition: background, color 0.3s;
+  border-radius: 70px !important;
+    font-size: 28px;
+    text-decoration: none;
+}
+.socicon-btn-box  ul li a:hover .socicon-btn-custom {
+    transition: background, color 0.3s;
+    text-decoration: none;
+}
+.socicon-btn-box  a:hover  {  text-decoration: none;}
+
+.socicons .socicon-btn-custom {
+  margin-bottom: 5px; }
+
+
+.socicon-btn-box  ul li a .socicon-btn-solid  {
+  position: relative;
+  display: inline-block;
+  font-family: 'socicon';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 22px;
+  border: 1px solid #ddd;
+  color: #999;
+  transition: background, color 0.3s;
+  border-radius: 60px !important;
+    text-decoration: none;
+	 background-color: #f9f9f9;
+}
+.socicon-btn-box  ul li a:hover .socicon-btn-solid {
+    transition: background, color 0.3s;
+    text-decoration: none;
+}
+
+.socicon-btn-box  ul li a:hover .socicon-btn-solid.bg-hover-grey-salsa:hover {
+  background: #fff !important; color: #32c5d2 }
+
+.table-person-info {width:100%}
+.table-person-info td {padding:4px 0; color: #888; font-size: 12px;}
+
+/*reset */
+.fc-event {padding:6px;}
+.modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #eef1f5;
+ color: #333;
+font-weight: 600;
+}
+/*reset 分页*/
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus
+{background-color: #36c6d3; border:solid 1px #36c6d3;}
+.pagination > li > a, .pagination > li > span {color:#36c6d3}
+
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td { vertical-align:middle;}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus { color:#36c6d3;}
+
+/*sub-page-menu*/
+.sub-page-menu,.sub-page-Infrastructure,.page-sidebar-sys{ width: 200px; display: block;margin-left:100px; position: fixed; background: url(../img/sub-page-menubg.png) repeat-y; overflow: hidden; overflow-y: auto;}
+.sub-page-Infrastructure {width: 350px; margin-left: 100px;background: url(../img/sub-page-350.png) repeat-y; overflow: hidden; overflow-y: auto;}
+.page-sidebar-sys {width:200px; margin-left: 100px;background: url(../img/sub-page-350.png) repeat-y; overflow: hidden; overflow-y: auto; border-right:solid 1px #ddd;}
+.sub-page-navmenu { width:100%; margin: 0; padding: 0;}
+.sub-page-navmenu  li{ width:100%; display: block; border-bottom: solid 1px #e0e3e8;}
+.sub-page-navmenu  li a { display: block;padding: 14px 0 14px 20px;  text-decoration: none; color: #666; font-weight: 600;}
+.sub-page-navmenu  li a:hover,.sub-page-navmenu  li a.active { display: block; background: #f4f6f8;padding: 14px 0 14px 20px;  text-decoration: none; box-sizing: border-box;border-right: solid 1px #f4f6f8; color: #32c5d2;}
+.sub-page-navmenu  li a:hover .badge-default,.sub-page-navmenu  li a.active .badge-default { background: #ed6b75;}
+@media (max-width: 1000px) {
+	.sub-page-menu {display:none;}
+	.sub-page-Infrastructure { width:100%; display: none;}
+}
+.cursor { cursor:pointer;}
+.line-gray { border-bottom: solid 1px #e0e3e8; box-shadow: 0 0 1px #fff;}
+.tabContent-div { display:none;}
+
+.font-18 { font-size:18px; font-weight: 600;}
+.nav-tabs.nav-tabs-custom > li > a, .nav-pills > li > a { font-size:16px;}
+.tab-content-custom{border:solid 1px #ddd; border-top: none; background-color: #fff;}
+.page-header.navbar .search-form .input-group .input-group-btn .btn.submit > i {color:#36c6d3;font-size:20px; font-weight: bold; }
+.feeds li .col2 > .date { font-style:normal;}
+
+
+  .modal-lg { width: 940px; }
+.quick-li-magin ul li { margin:0 4px; padding:10px 0;}
+
+
+
+
+ /*page-content-sys*/
+.page-content-wrapper .page-content.page-content-sys { padding:0;}
+
+/*reset tooltip*/
+.tooltip-inner {
+  max-width: 200px;
+  padding:6px 8px;
+  color: #fff;
+  text-align: center;
+  background-color: #263554;
+  border-radius: 4px; }
+
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid; }
+
+.tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #263554; }
+
+.tooltip.top-left .tooltip-arrow {
+  bottom: 0;
+  right: 5px;
+  margin-bottom: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #263554; }
+
+.tooltip.top-right .tooltip-arrow {
+  bottom: 0;
+  left: 5px;
+  margin-bottom: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #263554; }
+
+.tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0/*rtl:ignore*/;
+  border-right-color: #263554/*rtl:ignore*/; }
+
+.tooltip.left .tooltip-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px /*rtl:ignore*/;
+  border-left-color: #263554/*rtl:ignore*/; }
+
+.tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #263554; }
+
+.tooltip.bottom-left .tooltip-arrow {
+  top: 0;
+  right: 5px;
+  margin-top: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #263554; }
+
+.tooltip.bottom-right .tooltip-arrow {
+  top: 0;
+  left: 5px;
+  margin-top: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #263554; }
+
+
+/*gis*/
+.iframe-sys { position:relative;}
+.gis-box {position: absolute; /*z-index: 99; */padding:0;}
+.gis-box .row.gis-top {position: absolute; top:10px;  width:100%;margin:0;z-index: 999;}
+.gis-box .row.gis-bottom{position: absolute; bottom: 10px; width:100%;margin:0; z-index: 999;}
+.gis-box .row .col-xs-3,.gis-box .row .col-xs-6 {padding:0}
+
+
+.gis-contrast-box {position: absolute; padding:0;}
+.gis-contrast-box .row.gis-top {position: absolute; top:10px;  width:100%;margin:0;z-index: 999;}
+.gis-contrast-box .row.gis-bottom{position: absolute; bottom: 10px; width:100%;margin:0; z-index: 999;}
+.gis-contrast-box .row .col-xs-3,.gis-contrast-box .row .col-xs-6 {padding:0}
+
+
+
+
+.gis-menu-box {position: absolute; left:0; top:10px; z-index: 1000}
+.gis-rmenu-box {position: absolute; right:0; top:10px; z-index: 100}
+.gis-tool-outer {position: absolute; z-index: 999; top:10px; margin:0 auto; padding: 0; text-align: center; width:600px; margin-left:-300px; left:50%;}
+.gis-tool-box { top:0; text-align: center; margin: 0 auto; padding: 0;}
+.gis-facility-box {position: absolute; right:0; top:0;}
+.gis-selected-box {position: absolute; left:0; bottom:0; z-index: 999;}
+.gis-rselected-box {position: absolute; right:0; bottom:10px; z-index: 999;}
+.gis-overlays-box { bottom:0;text-align: center;margin: 0 auto; padding: 0;}
+.gis-overlays-contrast-box { bottom:0; position: absolute; left:130px;}
+.gis-eagle-eye-box{position: absolute; right:0; bottom:0;}
+
+ /*左上菜单*/
+.gis-menu {position: relative; top:0; left:10px;}
+.gis-rmenu {position: relative; top:0; right:10px;}
+.btn-gis-custom {background:url(../img/menu-bg.png) no-repeat; width:37px; height: 41px; cursor: pointer; border:none; color: white;}
+.btn-gis-custom:hover,.btn-gis-custom:focus,.btn-gis-custom.active {background:url(../img/menu-bg-hover.png) no-repeat;}
+
+.gis-menu-list {position: absolute; top:0; width:300px; z-index: 999;  display: none;}
+.open-gisrmenu { right:0;}
+.gis-menu-list .portlet{ margin-bottom: 0;}
+.gis-menu-list .portlet.light { background: url(../img/gis_bottombgC.png) repeat; border:solid 1px #263554; padding:0;}
+.gis-menu-list .portlet > .portlet-title { background: #263554;height:40px; min-height: 40px; border:none; opacity: 0.9; margin-bottom: 0;}
+.gis-menu-list .portlet.light > .portlet-title > .caption > .caption-subject { font-size:14px; color:#8b9fc8; padding-left:10px;}
+.close-gis-menu,.close-gis-rmenu { padding-right: 10px; line-height: 30px; color:#596d96;}
+.close-gis-menu:hover,.close-gis-rmenu:hover { color:white; cursor: pointer;}
+.gis-menu-list .portlet.light .portlet-body { padding:0 5px 6px 5px;}
+.gis-menu-list .portlet.light .portlet-body .row { margin:0 -5px;}
+.gis-menu-list .portlet.light .portlet-body .row .col-xs-4 { padding:2px 5px;}
+.gis-menu-list .portlet.light .portlet-body .row .col-xs-12 { padding-left:5px; padding-right:5px;}
+
+/*button*/
+.btn-black,.btn-black-menu {
+  color: #fff;
+  background-color: #263554;
+  border-color: #263554; }
+  .btn-black:focus, .btn-black.focus,.btn-black-menu:focus,.btn-black-menu.focus {
+    color: #fff;
+    background-color: #36c6d3;
+    border-color: #36c6d3; }
+  .btn-black:hover,.btn-black-menu:hover {
+    color: #fff;
+    background-color: #36c6d3;
+    border-color: #36c6d3; }
+  .btn-black:active, .btn-black.active,
+ .btn-black-menu:active, .btn-black-menu.active{
+    color: #fff;
+    background-color: #36c6d3;
+    border-color: #36c6d3; }
+    .btn-black:active:hover, .btn-black:active:focus, .btn-black:active.focus, .btn-black.active:hover, .btn-black.active:focus, .btn-black.active.focus,
+.btn-black-menu:active:hover, .btn-black-menu:active:focus, .btn-black-menu:active.focus, .btn-black-menu.active:hover, .btn-black-menu.active:focus, .btn-black-menu.active.focus{
+      color: #fff;
+      background-color: #36c6d3;
+      border-color: #36c6d3; }
+  .btn-black:active, .btn-black.active,
+  .btn-black-menu:active, .btn-black-menu.active{
+    background-image: none; }
+
+.btn-disable,.btn-disable:focus,.btn-disable:hover,.btn-disable:active,.btn-disable:active:hover { cursor: not-allowed;color: #7c828d;background-color: #4c576d;border-color: #4c576d;}
+
+
+.btn-group .dropdown-menu-black { background: #263554; border-color:#263554; min-width: 80px;}
+.dropdown-menu-black li.divider {
+    background: #36c6d3; }
+  .dropdown-menu li.header {
+    padding: 8px 14px 2px 14px; }
+  .dropdown-menu-black > li > a {
+    padding: 8px 10px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    clear: both;
+    font-weight: 300;
+    line-height: 18px;
+    white-space: nowrap; border-bottom:solid 1px #192337; }
+    .dropdown-menu-black > li > a > [class^="fa-"],
+    .dropdown-menu-black > li > a > [class*=" fa-"] {
+      color: #fff; }
+    .dropdown-menu-black > li > a > [class^="icon-"],
+    .dropdown-menu-black > li > a > [class*=" icon-"] {
+      color: #fff; }
+    .dropdown-menu-black > li > a > [class^="glyphicon-"],
+    .dropdown-menu-black > li > a > [class*=" glyphicon-"] {
+      color: #fff; }
+  .dropdown-menu-black > li:hover > a, .dropdown-menu-black > li.active > a, .dropdown-menu-black > li.active:hover > a {
+    text-decoration: none;
+    background-image: none;
+    background-color: #27a4b0;
+    color: #fff;
+    filter: none; }
+
+  .open > .btn-black.dropdown-toggle {
+    color: #fff;
+    background-color: #27a4b0;
+    border-color: #208992; }
+    .open > .btn-black.dropdown-toggle:hover,
+    .open > .btn-black.dropdown-toggle:focus,
+    .open > .btn-black.dropdown-toggle.focus {
+      color: #fff;
+      background-color: #36c6d3;
+      border-color: #36c6d3; }
+
+  .open > .btn-black.dropdown-toggle {
+    background-image: none; }
+
+ .dropdown > .dropdown-menu-black:after,
+  .dropdown-toggle > .dropdown-menu-black:after,
+  .btn-group > .dropdown-menu-black:after {
+    position: absolute;
+    top: -7px;
+    left: 10px;
+    right: auto;
+    display: inline-block !important;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #263554;
+    border-left: 7px solid transparent;
+    content: ''; }
+.dropdown-menu {
+    box-shadow:none;
+}
+
+
+.btn-black-menu { font-size:14px;width:84px;}
+/*panel*/
+.portlet-custom {background: url(../img/gis_bottombgC.png) repeat;  padding-top:5px; display: none;}
+.panel-black { /*background: url(../img/gis_bottombgC.png) repeat; */background: #6a7489;border: 1px solid #263554;}
+.panel-black .panel-heading { background:#4b5771;}
+.accordion .panel-black .panel-title { font-size:14px;}
+.accordion .panel-black .panel-title .accordion-toggle {padding:8px 15px;}
+.panel-group .panel-black .panel-heading + .panel-collapse > .panel-body, .panel-group .panel-heading + .panel-collapse > .list-group { border-top:1px solid #263554;}
+.accordion .panel-black .panel-title .accordion-toggle { display:inline-block; width:180px;}
+.accordion .panel-black .panel-title .accordion-toggle.accordion-toggle-styled.collapsed {background-position: left 8px;}
+.accordion .panel-black .panel-title .accordion-toggle.accordion-toggle-styled  {margin-left: 10px;}
+.accordion .panel-black .panel-title .accordion-toggle.accordion-toggle-styled{background-position:left -24px}
+.panel-group .panel-black .panel-heading { }
+.panel-group .panel-black .panel-heading a {
+    text-decoration: none; color: white;  }
+.panel-group .panel-black .panel-heading a:active,
+.panel-group .panel-black .panel-heading a:focus,
+.panel-group .panel-black .panel-heading a:hover {
+    text-decoration: none; }
+.panel-group .panel-black .panel-body{
+  	padding:6px; }
+.panel-black .panel-title .badge { margin:5px 4px 0 0;}
+.btn-check { margin:5px 10px 0 0;}
+.btncheck,.btnadd,.btnclose,.btnselect,.btnnoselect { padding:0; width:20px;height:20px; margin:0; text-align: center; vertical-align: middle;}
+.btncheck,.btnselect { display: none;}
+.btntime { min-width:20px;padding:0 2px; height:20px; margin:0; text-align: center; vertical-align: middle;}
+.badge-black {background-color: #263554; color:#fff; vertical-align: middle; padding:0 6px;font-size:10px;height:20px; line-height: 20px;}
+/*feeds*/
+.feeds-gis li{ background:none; font-size:14px; color: #c0c3c9;}
+.feeds-gis li:hover { background:#4b5771; color:white; font-weight: normal;}
+.feeds-gis li .col1 > .cont {margin-right: 45px;}
+.feeds-gis  li .col2 {margin-left: -45px;width: 45px;}
+.feeds-gis li .col2 > .date { padding: 2px 4px 5px 4px;}
+.feeds-gis li .col1 > .cont > .cont-col1 > .label { margin-left:5px; padding: 4px 2px;}
+/*label*/
+.label-blue {background-color: #6099dc;}
+.label-green {background-color: #6cde61;}
+.label-yellow {background-color: #f8bd6c;}
+.label-orange {background-color: #f89e6c;}
+.label-black {background:#4b5771;}
+.label-purple {background:#6662d8;}
+.label-rosered {background:#62d8d2;}
+.stat-all {}
+.stat-all .col-xs-3 { margin:6px 0;}
+.stat-all .col-xs-3 .label-black {background:#4b5771; color:#1b263c;  font-size:14px; padding: 4px; vertical-align: middle;}
+.gis-menu-body .portlet-custom {overflow:hidden; overflow-y: auto;}
+.portlet-custom .panel-group { margin-bottom:0;}
+.panel-black .form-control { background: #4b5771; border:none; color: #263554; font-size:16px;}
+.panel-black .form-control:focus { background:#6a7489;}
+
+ /*上中间工具*/
+.gis-tool {position: relative; margin: 0 auto; padding:0;}
+.gis-tool-bg {width:auto;}
+.gis-tool-bg .lbg {background:url(../img/gis_bottombgL.png) no-repeat; width:12px; height: 51px;}
+.gis-tool-bg .mbg { background:url(../img/gis_bottombgC.png) repeat-x; height:51px;}
+.gis-tool-bg .rbg {background:url(../img/gis_bottombgR.png) no-repeat; width:12px; height: 51px;}
+
+
+ /*右上设施*/
+.gis-facility {position:relative; right:10px; z-index: 99;}
+.facility-height { overflow: auto;overflow-x:hidden; display: block;}
+.gis-facility-list {position: absolute; top:0; width:240px; z-index: 100;  display: none; right:10px;}
+.gis-facility-list .portlet{ margin-bottom: 0;}
+.gis-facility-list .portlet.light { background: url(../img/gis_bottombgC.png) repeat; border:solid 1px #263554; padding:0;}
+.gis-facility-list .portlet > .portlet-title { background: #263554;height:40px; min-height: 40px; border:none; opacity: 0.9; margin-bottom: 0;}
+.gis-facility-list .portlet.light > .portlet-title > .caption > .caption-subject { font-size:14px; color:#8b9fc8; padding-left:10px;}
+.close-gis-facility { padding-right: 10px; line-height: 30px; color:#596d96;}
+.close-gis-facility:hover { color:white; cursor: pointer;}
+.gis-facility-list .portlet.light .portlet-body { padding:0 5px 6px 5px;}
+.gis-facility-list .portlet.light .portlet-body .row { margin:0 -5px;}
+.gis-facility-list .portlet.light .portlet-body .row .col-xs-4 { padding:2px 5px;}
+.gis-facility-list .portlet.light .portlet-body .row .col-xs-12 { padding-left:5px; padding-right:5px;}
+
+
+
+/*左下已选*/
+.gis-selected  {position: relative;left:10px; bottom:0;}
+.gis-rselected  {position: relative;right:10px; bottom:0;}
+.badge-box {position: relative;}
+.badge-custom {position: absolute; z-index: 99;  top:-20px; right:-6px;}
+.u-flyer {display: block;width: 361px;height:43px;border-radius: 0;position: fixed;z-index: 9999;}
+.u-flyer2 {display: block;width:30px;height:30px;border-radius: 30px;position: fixed;z-index: 9999;}
+
+
+.selected-height { max-height:400px; overflow: auto; overflow-x: hidden; display: block;}
+.selected-gismenu {position: absolute; bottom:60px; width:300px; z-index: 999; left:10px;display: block;}
+.rselected-gismenu {position: absolute; bottom:60px; width:300px; z-index: 999; right:10px;display: block;}
+.selected-gismenu .portlet,.rselected-gismenu .portlet{ margin-bottom: 0;}
+.selected-gismenu .portlet.light,.rselected-gismenu .portlet.light { background: url(../img/gis_bottombgC.png) repeat; border:solid 1px #263554; padding:0;}
+.selected-gismenu .portlet > .portlet-title,.rselected-gismenu .portlet > .portlet-title { background: #263554;height:40px; min-height: 40px; border:none; opacity: 0.9; margin-bottom: 0;}
+.selected-gismenu .portlet.light > .portlet-title > .caption > .caption-subject,.rselected-gismenu .portlet.light > .portlet-title > .caption > .caption-subject { font-size:14px; color:#8b9fc8; padding-left:10px;}
+.close-selected-gismenu,.close-rselected-gismenu { padding-right: 10px; line-height: 30px; color:#596d96;}
+.close-selected-gismenu:hover,.close-rselected-gismenu:hover { color:white; cursor: pointer;}
+.selected-gismenu .portlet.light .portlet-body,.rselected-gismenu .portlet.light .portlet-body { padding:0 5px 6px 5px;}
+.selected-gismenu .portlet.light .portlet-body .row,.rselected-gismenu .portlet.light .portlet-body .row { margin:0 -5px;}
+.selected-gismenu .portlet.light .portlet-body .row .col-xs-4,.rselected-gismenu .portlet.light .portlet-body .row .col-xs-4 { padding:2px 5px;}
+.selected-gismenu .portlet.light .portlet-body .row .col-xs-12,.rselected-gismenu .portlet.light .portlet-body .row .col-xs-12 { padding-left:5px; padding-right:5px;}
+
+.selected-gismenu .feeds-gis li .col2,.rselected-gismenu .feeds-gis li .col2 {margin-left: -75px;width: 75px;}
+.selected-gismenu .feeds-gis li .col1 > .cont,.rselected-gismenu .feeds-gis li .col1 > .cont {margin-right: 75px;}
+.selected-gismenu .feeds-gis  li .col1 > .cont > .cont-col1 > .label > i ,.rselected-gismenu .feeds-gis  li .col1 > .cont > .cont-col1 > .label > i { padding:0 2px; font-family: 微软雅黑; color: #fff;}
+.show-timeline { cursor:pointer;}
+.page-sys-gis,.contrast-sys-rgis,.contrast-sys-lgis {  /*background: rgba(0, 0, 0, 0) url("../img/bg-grey-transparent.png") repeat scroll 0 0;*/
+
+    padding: 10px 10px 0;
+    position: absolute;
+    right: 320px;
+    top: 104px;
+    width: 500px;
+    z-index: 1002;}
+.contrast-sys-rgis {left:40px;right:inherit;}
+.contrast-sys-lgis {right:40px;}
+/*时间轴*/
+.cd-horizontal-timeline .events a {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  text-align: center;
+  font-size: 14px;
+/*  padding-bottom: 15px;*/
+  color: #383838;
+  /* fix bug on Safari - text flickering while timeline translates */
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0); }
+.cd-horizontal-timeline .events-content { margin-top:-34px;}
+.cd-horizontal-timeline .timeline {height:140px;}
+.mt-timeline-horizontal .events-content ol li .mt-content { margin-top:15px; padding-top:10px;}
+.mt-timeline-horizontal .timeline .events-wrapper .events a.selected::after { background-color:#32c5d2;}
+.bg-before-green::before, .bg-after-green::after { background:#32c5d2;}
+
+.cd-horizontal-timeline .events a label { cursor:pointer;}
+.cd-horizontal-timeline .events a .font-name {position: relative; text-align: center;  top:32px; color: #999; cursor: pointer; display:block;}
+.cd-horizontal-timeline .events a .font-date {position: relative; font-size:12px; color: #999; height: 26px; line-height: 26px; padding-top: 30px; display: block;}
+.cd-horizontal-timeline .events a.selected .font-name,.cd-horizontal-timeline .events a.selected .font-date{ color:#32c5d2;}
+
+.table-info,.table-bold,.table-edit {width:100%; font-size: 12px; border: solid 1px #ddd; margin-bottom: 10px;}
+.table-info th,.table-bold th,.table-edit th { font-weight: 500; text-align:right;color:#fff; padding: 10px; font-size: 12px; background-color: #4b5771; border:solid 1px #344361;}
+.table.table-info > thead > tr > th, .table.table-info > thead > tr > td, .table.table-info > tbody > tr > th, .table.table-info > tbody > tr > td, .table.table-info > tfoot > tr > th, .table.table-info > tfoot > tr > td,
+.table-info td,.table-bold td,.table-edit td {color: #fff; font-size: 12px;border:solid 1px #4b5771;}
+.table-bold th,.table-bold td,.table-edit td { font-size:14px; color: #fff;}
+.table-edit .form-control { font-size:12px; height: 30px;}
+.btn-box-padding,.btn-num-padding { padding:10px 14px 0 15px;}
+.btn-box-padding .btn { margin:4px; min-width:135px;}
+.btn-num-padding .btn { margin:4px; min-width:101px;}
+.font-14 { font-size:14px;}
+
+.font-transform {
+                -moz-transform: rotate(-45deg);/* Firefox 旋转属性，参数表示角度(deg表示角度)，负数逆时针，正数顺时针 */
+                -webkit-transform: rotate(-45deg);/* Safari和Chrome */
+                -ms-transform: rotate(-45deg);/* IE 9 */
+                -o-transform: rotate(-45deg);/* Opera */
+				margin-bottom: -10px;
+            }
+.cd-horizontal-timeline .events { margin-top: 20px;}
+
+.page-sys-gis .portlet.light.portlet-fit > .portlet-title {padding: 0 10px 0 10px; margin-bottom: 0; border:none;}
+.page-sys-gis .portlet.light.portlet-fit > .portlet-body {padding: 0 20px 20px;}
+
+/*加载tcad*/
+.gis-loading-cad {  background: rgba(0, 0, 0, 0) url("../img/bg-grey-transparent.png") repeat scroll 0 0;
+    padding: 10px 10px 0;
+    position: absolute;
+    right: 60px;
+    top: 10px;
+    width: 300px;
+    z-index:999;}
+.gis-loading-cad .portlet.light.portlet-fit > .portlet-title {padding: 0 10px 0 10px; margin-bottom: 0; border:none;}
+.gis-loading-cad .portlet.light.portlet-fit > .portlet-body {padding: 0 20px 20px;}
+
+.gis-loading-box {bottom: 10px;left: 60px;position: absolute;z-index: 1000;}
+.gis-rloading-box {bottom: 10px;right: 60px;position: absolute;z-index: 1000;}
+.gis-loading {bottom: 0;left: 10px;position: relative;}
+.gis-rloading {bottom: 0;right: 10px;position: relative;}
+
+
+.loading-height { max-height:300px;overflow: auto;overflow-x:hidden; display: block;margin-top: -10px;}
+.gis-loading-list {position: absolute; width:300px; z-index: 100;  display: none; bottom: 60px;left: 70px;}
+.gis-rloading-list {position: absolute; width:300px; z-index: 100;  display: none; bottom: 60px;right: 70px;}
+.gis-loading-list .portlet,.gis-rloading-list .portlet{ margin-bottom: 0;}
+.gis-loading-list .portlet.light,.gis-rloading-list .portlet.light { background: url(../img/gis_bottombgC.png) repeat; border:solid 1px #263554; padding:0;}
+.gis-loading-list .portlet > .portlet-title,.gis-rloading-list .portlet > .portlet-title { background: #263554;height:40px; min-height: 40px; border:none; opacity: 0.9; margin-bottom: 0;}
+.gis-loading-list .portlet.light > .portlet-title > .caption > .caption-subject,.gis-rloading-list .portlet.light > .portlet-title > .caption > .caption-subject { font-size:14px; color:#8b9fc8; padding-left:10px;}
+.close-gis-loading,.close-gis-rloading { color:#596d96;}
+.close-gis-loading:hover,.close-gis-rloading:hover { color:white; cursor: pointer;}
+.title-gis-loading,.title-gis-rloading{ line-height: 30px; color:#596d96;}
+.gis-loading-list .portlet.light .portlet-body,.gis-rloading-list .portlet.light .portlet-body { padding:0 5px 6px 5px;}
+.gis-loading-list .portlet.light .portlet-body .row,.gis-rloading-list .portlet.light .portlet-body .row { margin:0 -5px;}
+.gis-loading-list .portlet.light .portlet-body .row .col-xs-4,.gis-rloading-list .portlet.light .portlet-body .row .col-xs-4 { padding:2px 5px;}
+.gis-loading-list .portlet.light .portlet-body .row .col-xs-12,.gis-rloading-list .portlet.light .portlet-body .row .col-xs-12 { padding-left:5px; padding-right:5px;}
+
+
+.gis-loading-list .feeds-gis  li .col1 > .cont > .cont-col1 > .label > i ,.gis-rloading-list .feeds-gis  li .col1 > .cont > .cont-col1 > .label > i { padding:0 2px; font-family: 微软雅黑; color: #fff;}
+/*加载tcad*/
+
+
+/*上传*/
+.gis-lupload-box {bottom: 10px;left: 120px;position: absolute;z-index: 1000;}
+.gis-rupload-box {bottom: 10px;right: 120px;position: absolute;z-index: 1000;}
+.gis-lupload {bottom: 0;left: 10px;position: relative;}
+.gis-rupload {bottom: 0;right: 10px;position: relative;}
+/*上传*/
+
+
+
+/*地图模式*/
+.gis-mapmode-box {bottom: 10px; left: 240px;position: absolute;z-index: 1000;}
+.gis-rmapmode-box {bottom: 10px; right: 240px;position: absolute;z-index: 1000;}
+.gis-mapmode {bottom: 0;left: 10px;position: relative;}
+.gis-rmapmode {bottom: 0;right: 10px;position: relative;}
+
+
+.mapmode-height { max-height:300px;overflow: auto;overflow-x:hidden; display: block;margin-top: -10px;}
+.gis-mapmode-list {position: absolute; width:156px; z-index: 100;  display: none; bottom: 60px;left: 250px;}
+.gis-rmapmode-list {position: absolute; width:156px; z-index: 100;  display: none; bottom: 60px;right: 250px;}
+.gis-mapmode-list .portlet,.gis-rmapmode-list .portlet{ margin-bottom: 0;}
+.gis-mapmode-list .portlet.light,.gis-rmapmode-list .portlet.light { background: url(../img/gis_bottombgC.png) repeat; border:solid 1px #263554; padding:0;}
+.gis-mapmode-list .portlet > .portlet-title,.gis-rmapmode-list .portlet > .portlet-title { background: #263554;height:40px; min-height: 40px; border:none; opacity: 0.9; margin-bottom: 0;}
+.gis-mapmode-list .portlet.light > .portlet-title > .caption > .caption-subject,.gis-rmapmode-list .portlet.light > .portlet-title > .caption > .caption-subject { font-size:14px; color:#8b9fc8; padding-left:10px;}
+.close-gis-mapmode,.close-gis-rmapmode { color:#596d96;}
+.close-gis-mapmode:hover,.close-gis-rmapmode:hover { color:white; cursor: pointer;}
+.title-gis-mapmode,.title-gis-rmapmode{ line-height: 30px; color:#596d96;}
+.gis-mapmode-list .portlet.light .portlet-body,.gis-rmapmode-list .portlet.light .portlet-body { padding:0 5px 6px 5px;}
+.gis-mapmode-list .portlet.light .portlet-body .row,.gis-rmapmode-list .portlet.light .portlet-body .row { margin:0 -5px;}
+.gis-mapmode-list .portlet.light .portlet-body .row .col-xs-4,.gis-rmapmode-list .portlet.light .portlet-body .row .col-xs-4 { padding:2px 5px;}
+.gis-mapmode-list .portlet.light .portlet-body .row .col-xs-12,.gis-rmapmode-list .portlet.light .portlet-body .row .col-xs-12 { padding-left:5px; padding-right:5px;}
+
+
+.gis-mapmode-list .feeds-gis  li .col1 > .cont > .cont-col1 > .label > i,.gis-rmapmode-list .feeds-gis  li .col1 > .cont > .cont-col1 > .label > i { padding:0 2px; font-family: 微软雅黑; color: #fff;}
+.gis-mapmode-body span,.gis-rmapmode-body span { margin:4px; float: left;}
+.gis-mapmode-body span button,.gis-rmapmode-body span button{ width:40px;}
+
+/*地图模式*/
+
+
+/*图例*/
+.gis-legend-box {bottom: 10px; left: 300px;position: absolute;z-index: 1000;}
+.gis-rlegend-box {bottom: 10px; right: 300px;position: absolute;z-index: 1000;}
+.gis-legend {bottom: 0;left: 10px;position: relative;}
+.gis-rlegend {bottom: 0;right: 10px;position: relative;}
+
+
+.legend-height { max-height:300px;overflow: auto;overflow-x:hidden; display: block;margin-top: -7px;}
+.gis-legend-list {position: absolute; min-width:226px; z-index: 100;  display: none; bottom: 60px;left: 310px;}
+.gis-rlegend-list {position: absolute; min-width:226px; z-index: 100;  display: none; bottom: 60px;right: 310px;}
+.gis-legend-list .portlet,.gis-rlegend-list .portlet{ margin-bottom: 0;}
+.gis-legend-list .portlet.light,.gis-rlegend-list .portlet.light { background: url(../img/gis_bottombgC.png) repeat; border:solid 1px #263554; padding:0;}
+.gis-legend-list .portlet > .portlet-title,.gis-rlegend-list .portlet > .portlet-title { background: #263554;height:40px; min-height: 40px; border:none; opacity: 0.9; margin-bottom: 0;}
+.gis-legend-list .portlet.light > .portlet-title > .caption > .caption-subject,.gis-rlegend-list .portlet.light > .portlet-title > .caption > .caption-subject { font-size:14px; color:#8b9fc8; padding-left:10px;}
+.close-gis-legend,.close-gis-rlegend { color:#596d96;}
+.close-gis-legend:hover,.close-gis-rlegend:hover { color:white; cursor: pointer;}
+.title-gis-legend,.title-gis-rlegend{ line-height: 30px; color:#596d96;}
+.gis-legend-list .portlet.light .portlet-body,.gis-rlegend-list .portlet.light .portlet-body { padding:0 5px 6px 5px;}
+.gis-legend-list .portlet.light .portlet-body .row,.gis-rlegend-list .portlet.light .portlet-body .row { margin:0 -5px;}
+.gis-legend-list .portlet.light .portlet-body .row .col-xs-4,.gis-rlegend-list .portlet.light .portlet-body .row .col-xs-4 { padding:2px 5px;}
+.gis-legend-list .portlet.light .portlet-body .row .col-xs-12,.gis-rlegend-list .portlet.light .portlet-body .row .col-xs-12 { padding-left:5px; padding-right:5px;}
+
+
+.gis-legend-list .feeds-gis  li .col1 > .cont > .cont-col1 > .label > i,.gis-rlegend-list .feeds-gis  li .col1 > .cont > .cont-col1 > .label > i { padding:0 2px; font-family: 微软雅黑; color: #fff;}
+.gis-legend-body span,.gis-rlegend-body span { margin:4px; float: left;}
+.gis-legend-body span button,.gis-rlegend-body span button{ width:40px;}
+
+/*图例*/
+
+
+/*叠加*/
+.gis-overlay-contrast {  background: rgba(0, 0, 0, 0) url("../img/bg-grey-transparent.png") repeat scroll 0 0;
+    padding: 10px 10px 0;
+    position: absolute;
+    right: 60px;
+    top: 10px;
+    width: 300px;
+    z-index:999;}
+.gis-overlay-contrast .portlet.light.portlet-fit > .portlet-title {padding: 0 10px 0 10px; margin-bottom: 0; border:none;}
+.gis-overlay-contrast .portlet.light.portlet-fit > .portlet-body {padding: 0 20px 20px;}
+
+.gis-overlay-box {bottom: 10px;left: 180px;position: absolute;z-index: 1000;}
+.gis-roverlay-box {bottom: 10px;right: 180px;position: absolute;z-index: 1000;}
+.gis-overlay {bottom: 0;left: 10px;position: relative;}
+.gis-roverlay {bottom: 0;right: 10px;position: relative;}
+
+.overlay-height { max-height:300px;overflow: auto;overflow-x:hidden; display: block;margin-top: -10px;}
+.gis-overlay-list {position: absolute; width:300px; z-index: 100;  display: none; bottom: 60px;left: 190px;}
+.gis-roverlay-list {position: absolute; width:300px; z-index: 100;  display: none; bottom: 60px;right: 190px;}
+.gis-overlay-list .portlet,.gis-roverlay-list .portlet{ margin-bottom: 0;}
+.gis-overlay-list .portlet.light,.gis-roverlay-list .portlet.light { background: url(../img/gis_bottombgC.png) repeat; border:solid 1px #263554; padding:0;}
+.gis-overlay-list .portlet > .portlet-title,.gis-roverlay-list .portlet > .portlet-title { background: #263554;height:40px; min-height: 40px; border:none; opacity: 0.9; margin-bottom: 0;}
+.gis-overlay-list .portlet.light > .portlet-title > .caption > .caption-subject,.gis-roverlay-list .portlet.light > .portlet-title > .caption > .caption-subject { font-size:14px; color:#8b9fc8; padding-left:10px;}
+.close-gis-overlay,.close-gis-roverlay { color:#596d96;}
+.close-gis-overlay:hover,.close-gis-roverlay:hover { color:white; cursor: pointer;}
+.title-gis-overlay,.title-gis-roverlay{ line-height: 30px; color:#596d96;}
+.gis-overlay-list .portlet.light .portlet-body,.gis-roverlay-list .portlet.light .portlet-body { padding:0 5px 6px 5px;}
+.gis-overlay-list .portlet.light .portlet-body .row,.gis-roverlay-list .portlet.light .portlet-body .row { margin:0 -5px;}
+.gis-overlay-list .portlet.light .portlet-body .row .col-xs-4,.gis-roverlay-list .portlet.light .portlet-body .row .col-xs-4 { padding:2px 5px;}
+.gis-overlay-list .portlet.light .portlet-body .row .col-xs-12,.gis-roverlay-list .portlet.light .portlet-body .row .col-xs-12 { padding-left:5px; padding-right:5px;}
+
+
+.gis-overlay-list .feeds-gis  li .col1 > .cont > .cont-col1 > .label > i,.gis-roverlay-list .feeds-gis  li .col1 > .cont > .cont-col1 > .label > i{ padding:0 2px; font-family: 微软雅黑; color: #fff;}
+.gis-overlay-body span,.gis-roverlay-body span { margin:4px; float: left;}
+.gis-overlay-body span button,.gis-roverlay-body span button{ width:40px;}
+.gis-overlay-body span:first-child button,.gis-roverlay-body span:first-child button  { width:88px;}
+
+/*叠加*/
+
+
+
+
+
+/*下中叠加图层*/
+.gis-overlays {position: relative; margin: 0 auto; padding:0;}
+
+
+
+
+/*右下鹰眼*/
+.gis-eagle-eye {position:absolute; right:10px; bottom:0; z-index: 99;}
+.gis-egeyes-box{/*position:relative;bottom:0;right:0;*/}
+.gis-egeyes {padding:5px 8px 2px 8px;background:url(../img/gis_bottombgC.png) repeat; display:block; overflow:hidden}
+.gis-egeyes span{  text-indent:10px;color:#fff;font-size:14px; font-style:bold; line-height: 25px;display:block}
+
+
+
+
+/*对比*/
+.contrast-box {margin-left: auto;margin-right: auto;padding-left: 0;padding-right: 0;}
+.contrast-row{margin-left: 0;margin-right: 0;}
+.contrast-col{ min-height: 0;padding-left: 0;padding-right: 0;position: relative;float: left; width:50%; overflow: hidden;}
+
+
+/*时间轴*/
+.light.page-sys-timeline { background:#263554;box-shadow: 10px 10px 10px rgb(38,53,84,0.8);}
+
+.feeds li{
+    background-color: #4b5771;
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 7px;
+    padding-top: 4px;
+}
+
+.feeds li  .col2 .date a{ font-style:normal; color:#fff;}
+
+.feeds-gis li {
+    background-color: #6a7489;
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 7px;
+    padding-top: 4px;
+}
+.mt-content.border-grey-steel { border-color:#4b5771!important;}
+.mt-timeline-horizontal .events-content ol li .mt-content { border-top:solid 1px #4b5771;}
+.bg-before-green::before, .bg-after-green::after { background:transparent;}
+.portlet.light.portlet-fit > .portlet-title { padding:0 20px;}
+.portlet.light > .portlet-title { min-height:38px; height:38px;}
+.portlet > .portlet-title { border-bottom:none;}
+.portlet.light.portlet-fit > .portlet-body { padding-top:0;}
+.feeds li .col1 > .cont > .cont-col1 > .label { margin-left:5px;}
+
+/*animation*/
+.icon-animated {
+    animation: 2s ease 1s normal none infinite running  ringing;
+    display: inline-block;
+    transform-origin: 50% 0 0;
+}
+@keyframes ringing {
+0% {
+    transform: rotate(-15deg);
+}
+2% {
+    transform: rotate(15deg);
+}
+4% {
+    transform: rotate(-18deg);
+}
+6% {
+    transform: rotate(18deg);
+}
+8% {
+    transform: rotate(-22deg);
+}
+10% {
+    transform: rotate(22deg);
+}
+12% {
+    transform: rotate(-18deg);
+}
+14% {
+    transform: rotate(18deg);
+}
+16% {
+    transform: rotate(-12deg);
+}
+18% {
+    transform: rotate(12deg);
+}
+20% {
+    transform: rotate(0deg);
+}
+}
+@-webkit-keyframes ringing {
+0% {
+    transform: rotate(-15deg);
+}
+2% {
+    transform: rotate(15deg);
+}
+4% {
+    transform: rotate(-18deg);
+}
+6% {
+    transform: rotate(18deg);
+}
+8% {
+    transform: rotate(-22deg);
+}
+10% {
+    transform: rotate(22deg);
+}
+12% {
+    transform: rotate(-18deg);
+}
+14% {
+    transform: rotate(18deg);
+}
+16% {
+    transform: rotate(-12deg);
+}
+18% {
+    transform: rotate(12deg);
+}
+20% {
+    transform: rotate(0deg);
+}
+}
+@-moz-keyframes ringing {
+0% {
+    transform: rotate(-15deg);
+}
+2% {
+    transform: rotate(15deg);
+}
+4% {
+    transform: rotate(-18deg);
+}
+6% {
+    transform: rotate(18deg);
+}
+8% {
+    transform: rotate(-22deg);
+}
+10% {
+    transform: rotate(22deg);
+}
+12% {
+    transform: rotate(-18deg);
+}
+14% {
+    transform: rotate(18deg);
+}
+16% {
+    transform: rotate(-12deg);
+}
+18% {
+    transform: rotate(12deg);
+}
+20% {
+    transform: rotate(0deg);
+}
+}
+.icon-animated-vertical {
+    animation: 2s ease 2s normal none infinite running vertical;
+    display: inline-block;
+}
+@keyframes vertical {
+0% {
+    transform: translate(0px, -3px);
+}
+4% {
+    transform: translate(0px, 3px);
+}
+8% {
+    transform: translate(0px, -3px);
+}
+12% {
+    transform: translate(0px, 3px);
+}
+16% {
+    transform: translate(0px, -3px);
+}
+20% {
+    transform: translate(0px, 3px);
+}
+22% {
+    transform: translate(0px, 0px);
+}
+}
+@keyframes vertical {
+0% {
+    transform: translate(0px, -3px);
+}
+4% {
+    transform: translate(0px, 3px);
+}
+8% {
+    transform: translate(0px, -3px);
+}
+12% {
+    transform: translate(0px, 3px);
+}
+16% {
+    transform: translate(0px, -3px);
+}
+20% {
+    transform: translate(0px, 3px);
+}
+22% {
+    transform: translate(0px, 0px);
+}
+}
+@keyframes vertical {
+0% {
+    transform: translate(0px, -3px);
+}
+4% {
+    transform: translate(0px, 3px);
+}
+8% {
+    transform: translate(0px, -3px);
+}
+12% {
+    transform: translate(0px, 3px);
+}
+16% {
+    transform: translate(0px, -3px);
+}
+20% {
+    transform: translate(0px, 3px);
+}
+22% {
+    transform: translate(0px, 0px);
+}
+}
+
+
+
+/*投影仪样式*/
+.btn.green:not(.btn-outline),.btn-success,.btn .btn-sm .green {background-color: #4276a4; border-color: #2d5f8b; color: #fff;}
+.btn.green:hover:not(.btn-outline),.btn-success:hover,.btn .btn-sm .green:hover{background-color: #14567a; border-color: #0e4665; color: #95c1de;}
+
+.btn-black,.btn-black-menu {
+  color: #fff;
+ font-size: 16px;
+  background-color: #263554;
+  border-color: #263554; }
+  .btn-black:focus, .btn-black.focus,.btn-black-menu:focus,.btn-black-menu.focus {
+    color: #fff;
+    background-color: #14567a;
+    border-color: #0e4665; }
+  .btn-black:hover,.btn-black-menu:hover {
+    color: #fff;
+    background-color: #14567a;
+    border-color: #0e4665; }
+  .btn-black:active, .btn-black.active,
+ .btn-black-menu:active, .btn-black-menu.active{
+    color: #fff;
+    background-color: #14567a;
+    border-color: #0e4665; }
+    .btn-black:active:hover, .btn-black:active:focus, .btn-black:active.focus, .btn-black.active:hover, .btn-black.active:focus, .btn-black.active.focus,
+.btn-black-menu:active:hover, .btn-black-menu:active:focus, .btn-black-menu:active.focus, .btn-black-menu.active:hover, .btn-black-menu.active:focus, .btn-black-menu.active.focus{
+      color: #fff;
+      background-color: #14567a;
+      border-color: #0e4665; }
+  .btn-black:active, .btn-black.active,
+  .btn-black-menu:active, .btn-black-menu.active{
+    background-image: none; }
+
+.gis-menu-list .portlet.light > .portlet-title > .caption > .caption-subject { font-size:16px;}
+.portlet > .portlet-title > .actions {font-size:16px;}
+.accordion .panel-black .panel-title .accordion-toggle { font-size:16px;}
+.feeds-gis li { font-size:16px;}
+
+
+/*zhangping,2017-11-23*/
+/*CAD图层*/
+.cad-selected-box {position: absolute; left:130px; bottom:0; z-index: 999;}
+.cadselected-height { display: block; margin-top:-5px;}
+.selected-cad {position: absolute; bottom:60px; width:500px; z-index: 999; left:130px;display: block;}
+.checkbox-height {height: 324px; overflow:hidden; overflow-y: auto}
+.rselected-cad {position: absolute; bottom:60px; width:300px; z-index: 999; right:10px;display: block;}
+.selected-cad .portlet,.rselected-cad .portlet{ margin-bottom: 0;}
+.selected-cad .portlet.light,.rselected-cad .portlet.light { background: url(../img/gis_bottombgC.png) repeat; border:solid 1px #263554; padding:0;}
+.selected-cad .portlet > .portlet-title,.rselected-cad .portlet > .portlet-title { background: #263554;height:40px; min-height: 40px; border:none; opacity: 0.9; margin-bottom: 0;}
+.selected-cad .portlet.light > .portlet-title > .caption > .caption-subject,.rselected-cad .portlet.light > .portlet-title > .caption > .caption-subject { font-size:14px; color:#8b9fc8; padding-left:10px;}
+.close-selected-cad,.close-rselected-cad { padding-right: 10px; line-height: 30px; color:#596d96;}
+.close-selected-cad:hover,.close-rselected-cad:hover { color:white; cursor: pointer;}
+.selected-cad .portlet.light .portlet-body,.rselected-cad .portlet.light .portlet-body { padding:0 5px 6px 5px;}
+.selected-cad .portlet.light .portlet-body .row,.rselected-cad .portlet.light .portlet-body .row { margin:0 -5px;}
+.selected-cad .portlet.light .portlet-body .row .col-xs-4,.rselected-cad .portlet.light .portlet-body .row .col-xs-4 { padding:2px 5px;}
+.selected-cad .portlet.light .portlet-body .row .col-xs-12,.rselected-cad .portlet.light .portlet-body .row .col-xs-12 { padding-left:5px; padding-right:5px;}
+.fa-cad {font-family: 'Arial Black';font-size:11px; text-align: left;}
+/*tab标签*/
+.tabbable-tabdrop .nav-tabs {border-bottom: 1px solid #263554;background:#4b5771; border-top-left-radius: 4px;border-top-right-radius: 4px;}
+.tabbable-tabdrop .nav > li > a {padding:6px 10px; color: #263554;}
+.tabbable-tabdrop .nav-tabs > li > a {margin-right: 2px;line-height: 1.42857;border: 1px solid transparent;border-radius: 4px 4px 0 0; }
+.tabbable-tabdrop  .nav-tabs > li > a:hover {border-color: #263554 #263554 #263554; background-color: #6a7489;color: #fff;}
+.tabbable-tabdrop .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {color: #fff;background-color: #6a7489;border: 1px solid #263554;border-bottom-color: transparent;cursor: default; }
+.tabbable-tabdrop .nav-tabs .dropdown.open > .dropdown-toggle {border-color: #263554 #263554 #263554; background-color: #263554; color:#fff;}
+.tabbable-tabdrop .dropdown-menu  a{background-color: #263554; color:#6a7489;border: 1px solid #263554;}
+.tabbable-tabdrop .dropdown-menu  a:hover,.tabbable-tabdrop .dropdown-menu  a:focus{background-color: #4b5771; color:#fff;border: 1px solid #4b5771;}
+.tabbable-tabdrop .dropdown-menu   {background-color: #263554; color:#fff;border: 1px solid #263554; box-shadow:  0px 0px 10px rgb(0,0,0,0.5);}
+.dropdown-menu > li:hover > a, .dropdown-menu > li.active > a, .dropdown-menu > li.active:hover > a {background-color: #4b5771; color:#fff;border: 1px solid #263554;}
+.dropdown > .dropdown-menu:before {border-right: 8px solid transparent;
+border-bottom: 8px solid #263554;
+border-left: 8px solid transparent;}
+.dropdown > .dropdown-menu:after  {border-right: 8px solid transparent;
+border-bottom: 8px solid #263554;
+border-left: 8px solid transparent;}
+/*图层选择*/
+.tab-pane-checkbox a,
+.tab-pane-allcheck a{min-width:130px; margin:0 15px 6px 0; display: inline-block;}
+.tab-pane-checkbox a label,
+.tab-pane-allcheck a label { float: left;  margin:1px 0 0 2px;}
+.tab-pane-checkbox a,.tab-pane-checkbox a label,
+.tab-pane-allcheck a,.tab-pane-allcheck a label{ font-size:13px;text-decoration: none; color: #263554;cursor: pointer; font-weight: normal;}
+.tab-pane-checkbox a:hover,.tab-pane-checkbox a:hover label,
+.tab-pane-allcheck a:hover,.tab-pane-allcheck a:hover label{ text-decoration: none; color: #36c6d3; cursor: pointer;}
+.tab-pane-checkbox a .fa-check,
+.tab-pane-allcheck a .fa-check{ display:none;}
+.tab-pane-checkbox a .btn-black,
+.tab-pane-allcheck a .btn-black{padding:0; width:18px;height:18px; margin:0; text-align: center; vertical-align: middle;  font-size:12px; float: left;}
+.tab-pane-checkbox a:hover .btn-black,
+.tab-pane-allcheck a:hover .btn-black{ color: #fff;background-color: #36c6d3;border-color: #2bb8c4;}
+.tab-pane-checkbox a.active .btn-black,
+.tab-pane-allcheck a.active .btn-black{ color: #fff;background-color: #36c6d3;border-color: #2bb8c4;}
+.tab-pane-checkbox a.active label,
+.tab-pane-allcheck a.active label{ text-decoration: none; color: #36c6d3; cursor: pointer;}
+.tab-pane-checkbox a.active .fa-check,
+.tab-pane-allcheck a.active .fa-check{display:inline-block;}
+/*全选*/
+.tab-pane-allcheck { border-bottom:solid 1px #4b5771; margin-bottom:10px; padding-bottom:6px; /*box-shadow: 0 0 1px rgb(255,255,255,0.2)*/}
+.tab-pane-allcheck a{margin:0 15px 0 0; display:inline-block;min-width: 70px;}
+

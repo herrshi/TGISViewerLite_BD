@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />-->
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <title>TGISViewer-Light</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--<script src="libs/bootstrap/js/html5shiv.js"></script>-->
+    <style>
+      body,
+      html {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      #mapContainer {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #testButtons {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 200px;
+        height: 30px;
+        z-index: 999;
+        background: #ffffff;
+        color: #777777;
+        padding: 5px;
+        border: 2px solid #666666;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="mapContainer"></div>
+
+    <div id="testButtons">
+      <button type="button" onclick="Test1ClickHandler()">Test1</button>
+      <button type="button" onclick="Test2ClickHandler()">Test2</button>
+      <button type="button" onclick="Test3ClickHandler()">Test3</button>
+    </div>
+
+    <script src="simpleLoader.js"></script>
+    <script src="TGISAPI.js"></script>
+
+    <script>
+      var map = TMap.createNew(
+        {
+          viewerUrl: "http://localhost:8090/TGISViewerLite_BD/",
+          config:
+            "http://localhost:8090/TGISViewerLite_BD/projects/BaoShan/spw/config.json"
+        },
+        "mapContainer",
+        function() {
+          map.addPoints({
+            defaultSymbol: {
+              url: "images/RedSphere.png",
+              xoffset: 32,
+              yoffset: 32
+            },
+            points: [
+              {
+                id: "pt001",
+                type: "police",
+                geometry: { x: 103.8535, y: 36.0342 },
+                symbol: {
+                  url: "images/BlueSphere.png",
+                  xoffset: 32,
+                  yoffset: 32
+                },
+                fields: { 姓名: "张三", 状态: "在岗" }
+              },
+              {
+                id: "pt002",
+                type: "police",
+                geometry: { x: 103.8431, y: 36.053 },
+                content:
+                  "<b>金昌北路-南滨河路</b><select><option value='111'>南滨河路-静宁路(北) 北向南.南滨河路-静宁路(东) 东向西</option></select>"
+              },
+              {
+                id: "pt003",
+                type: "police",
+                geometry: { x: 103.8541, y: 36.05 }
+              }
+            ]
+          });
+          // map.addLines('{"defaultSymbol":{"color":"#ff0000"},"lines":[{"id":"wx001","type":"GPS","geometry":{"paths":[[[103.8535,36.0342],[103.8431,36.053],[103.8541,36.05]]]},"symbol":{"alpha":0.5, "width":5}}]}');
+          // map.hideBottomToolbar();
+          //map.startDrawOverlay({"drawType":"point"});
+          map.hideTopToolbarButton("图形搜索");
+          map.hideTopToolbarButton("输入坐标");
+          map.hideTopToolbarButton("矢量图");
+          map.hideTopToolbarButton("航拍图");
+          map.hideTopToolbarButton("线划图");
+          map.hideTopToolbarButton("对比");
+          map.hideTopToolbarButton("历史演变");
+          map.hideTopToolbar();
+          map.hideBottomToolbar();
+          map.hideLayer({ label: "道路养护", ids: "" });
+          map.showJurisdiction();
+
+        }
+      );
+
+      function Test1ClickHandler() {
+        map.addPoints({
+          defaultSymbol: {
+            url: "images/RedSphere.png",
+            xoffset: 32,
+            yoffset: 32
+          },
+          points: [
+            {
+              id: "pt001",
+              type: "police",
+              geometry: { x: 103.8535, y: 36.0342 },
+              symbol: {
+                url: "images/BlueSphere.png",
+                xoffset: 32,
+                yoffset: 32
+              },
+              fields: { 姓名: "张三", 状态: "在岗" }
+            },
+            {
+              id: "pt002",
+              type: "police",
+              geometry: { x: 103.8431, y: 36.053 },
+              content:
+                "<b>金昌北路-南滨河路</b><select><option value='111'>南滨河路-静宁路(北) 北向南.南滨河路-静宁路(东) 东向西</option></select>"
+            },
+            { id: "pt003", type: "police", geometry: { x: 103.8541, y: 36.05 } }
+          ]
+        });
+        map.showJurisdiction();
+        map.addPoints({
+          defaultSymbol: {
+            url: "images/RedSphere.png",
+            xoffset: 32,
+            yoffset: 32
+          },
+          coordinateSystem: "BD09",
+          points: [
+            {
+              id: "pt001",
+              type: "police",
+              geometry: { x: 121.44028, y: 31.361456 }
+            }
+          ]
+        });
+        map.addPoints({
+          defaultSymbol: {
+            url: "images/RedSphere.png",
+            xoffset: 32,
+            yoffset: 32
+          },
+          points: [
+            {
+              id: "pt001",
+              type: "police",
+              geometry: { x: 121.4462, y: 31.2945 }
+            }
+          ]
+        });
+        // map.deleteAllPoints();
+        // map.deletePoints('{"types":["police"]}');
+        // map.deletePoints('{"ids":["pt001"]}');
+        // map.deleteLines('{"ids":["wx001"]}')
+        // map.deleteAllLines();
+        // map.startDraw('{"type":"point","showMeasure":false}', function (result) {
+        //   console.log(result);
+        // });
+        // map.hidePoints('{"types":["police"]}');
+        // map.findFeature('{"id":"pt001"}');
+        // map.addOD('{"type":"O","startPoint":{"x":103.8535,"y":36.0342},"endFlows":[{"endPoint":{"x":103.8431,"y":36.053},"flow":100},{"endPoint":{"x":103.8541,"y":36.05},"flow":150}]}\n');
+        // map.geometrySearch('{"userDraw":true,"geoType":"circle","types":["police"]}', function (results) {
+        //   console.log(results);
+        // });
+        map.geometrySearch(
+          '{"userDraw":false,"geoType":"circle","geometry":{"center":{"x":103.8535,"y":36.0342},"radius":200}}',
+          function(results) {
+            console.log(results);
+          }
+        );
+        // map.startTrackPlayback('{"trackPoints":[{"x":103.8535,"y":36.0342,"time":"2018-04-11 11:38:45"},{"x":103.8431,"y":36.053,"time":"2018-04-11 11:38:45"},{"x":103.8541,"y":36.05,"time":"2018-04-11 11:38:45"}]}');
+      }
+
+      function Test2ClickHandler() {
+        // map.stopDraw();
+        // map.hidePoints('{"types":["police"]}');
+        // map.addOD('{"type":"D","startPoint":{"x":103.8535,"y":36.0342},"endFlows":[{"endPoint":{"x":103.8431,"y":36.053},"flow":100},{"endPoint":{"x":103.8541,"y":36.05},"flow":150}]}\n');
+        // map.deleteOD();
+        map.addPoints(
+          '{"defaultSymbol":{"url":"images/RedSphere.png","xoffset":32,"yoffset":32},"points":[{"id":"pt001","type":"police","geometry":{"x":103.8535,"y":36.0342},"symbol":{"url":"images/BlueSphere.png","xoffset":32,"yoffset":32},"fields":{"姓名":"张三","状态":"在岗"}},{"id":"pt002","type":"police","geometry":{"x":103.8431,"y":36.053},"content":"<b>金昌北路-南滨河路</b><select><option value=' +
+            "111" +
+            '>南滨河路-静宁路(北) 北向南.南滨河路-静宁路(东) 东向西</option></select>"},{"id":"pt003","type":"police","geometry":{"x":103.8541,"y":36.05}}]}'
+        );
+      }
+
+      function Test3ClickHandler() {
+        map.showTopToolbar();
+      }
+
+      function onBottomDockClick(id, state) {
+        console.log(id, state);
+      }
+    </script>
+
+    <!-- Bootstrap core JavaScript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

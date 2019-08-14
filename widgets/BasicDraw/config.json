@@ -1,0 +1,8 @@
+{
+  "tooltip": {
+    "startDraw": "单击开始绘制",
+    "continueDraw": "单击继续绘制",
+    "finishDraw": "单击继续绘制, 双击结束绘制",
+    "rectangleStartDraw": "按下鼠标以开始绘制, 释放以完成绘制"
+  }
+}

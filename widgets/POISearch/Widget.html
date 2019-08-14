@@ -1,0 +1,57 @@
+<div>
+  <div class="popup_box" style="width:420px;">
+    <div class="popup_head">
+      <span class="popup_head_title">POI查询</span>
+      <span class="popup_close">
+      <a href="#">
+        <img src="images/ico_popup_close.png" width="10" height="10" alt="关闭"/>
+      </a>
+    </span><!--关闭-->
+    </div>
+    <!--正文内容开始 拷贝popup_inner以内样式到新页面-->
+
+    <div class="popup_inner">
+      <!--内容-->
+      <table class="table_no" width="100%">
+        <tr>
+          <td>
+            <input id="txtSearchText" type="text" placeholder="搜地点" value="兰州大学">
+          </td>
+          <td>
+            <div class="btn_centerbox padding10">
+              <input id="btnPoiSearch" type="button" class="btn btn-primary btn-sm" value="搜 索"/>
+              <input id="btnPoiClear" type="button" class="btn btn-primary btn-sm" value="清 除"/>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div style="clear:both;height:25px;margin:30px 10px 15px 0"></div>
+    </div>
+
+    <div id="divResult" class="popup_result">
+      <table id="tableResult" style="width: 100%;">
+        <!--<tr style="cursor: pointer; margin: 30px 8px 20px 6px; border-bottom: 1px solid #C0C0C0;">-->
+          <!--<td style="width: 33px; height: 30px; vertical-align: top">-->
+            <!--<img src="images/red1.png">-->
+          <!--</td>-->
+          <!--<td>-->
+            <!--<p>名称: 兰州大学</p>-->
+            <!--<p>地址: 甘肃省兰州市城关区天水南路222号</p>-->
+            <!--<p>电话: 0931-8912116;0931-8911114;0931-8912748</p>-->
+          <!--</td>-->
+        <!--</tr>-->
+
+        <!--<tr style="cursor: pointer; margin: 30px 8px 20px 6px; border-bottom: 1px solid #C0C0C0;">-->
+          <!--<td style="width: 33px; height: 30px; vertical-align: top">-->
+            <!--<img src="images/red2.png">-->
+          <!--</td>-->
+          <!--<td>-->
+            <!--<p>名称: 兰州大学博物馆</p>-->
+            <!--<p>地址：甘肃省兰州市榆中县力行西路与安亭大道交叉口西50米</p>-->
+          <!--</td>-->
+        <!--</tr>-->
+
+      </table>
+    </div>
+  </div>
+</div>

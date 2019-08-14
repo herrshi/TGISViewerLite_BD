@@ -1,0 +1,285 @@
+{
+  "buttons": [
+    {
+      "label": "实时路况",
+      "id": "Traffic",
+      "image": "images/buttons/FaBuDuan-white.png",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["百度实时路况"]
+        }
+      ]
+    },
+    {
+      "image": "images/buttons/SheXiangJi.png",
+      "id": "SXJ",
+      "label": "摄像机",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["SXJ"]
+        }
+      ]
+    },
+    {
+      "image": "images/buttons/QingBaoBan.png",
+      "id": "QBB",
+      "label": "情报板",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["QBB"]
+        }
+      ]
+    },
+    {
+      "image": "images/buttons/DuanMian.png",
+      "id": "CJQ",
+      "label": "车检器",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["CJQ"]
+        }
+      ]
+    },
+    {
+      "image": "images/buttons/XinHaoJi.png",
+      "id": "XHJ",
+      "label": "信号机",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["XHJ"]
+        }
+      ]
+    },
+    {
+      "image": "images/buttons/KaKou.png",
+      "id": "KK",
+      "label": "卡口",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["KK"]
+        }
+      ]
+    },
+    {
+      "image": "images/buttons/DianZiJingCha.png",
+      "id": "DZJC",
+      "label": "电子警察",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["DZJC"]
+        }
+      ]
+    },
+    {
+      "label": "实时路况",
+      "id": "FBD",
+      "image": "images/buttons/FaBuDuan-white.png",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["百度实时路况"]
+        }
+      ]
+    },
+    {
+      "image": "images/buttons/JingCha.png",
+      "id": "dutyPolice",
+      "label": "警员",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["dutyPolice"]
+        }
+      ]
+    },
+
+    {
+      "image": "images/buttons/SheXiangJi-KeKong.png",
+      "id": "GDSXJ",
+      "label": "高点摄像机",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["GDSXJ"]
+        }
+      ]
+    },
+
+    {
+      "image": "images/buttons/JingChe.png",
+      "id": "dutyCar",
+      "label": "警车",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["dutyCar"]
+        }
+      ]
+    },
+    {
+      "image": "images/buttons/JingQing.png",
+      "id": "alarmGisPoint",
+      "label": "警情",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["alarmGisPoint"]
+        }
+      ]
+    },
+    {
+      "image": "images/buttons/JingQing-YinJi.png",
+      "id": "emgc_event",
+      "label": "应急事件",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["emgc_event"]
+        }
+      ]
+    },
+    {
+      "image": "images/buttons/HeiMingDan.png",
+      "id": "HMD",
+      "label": "黑名单",
+      "operations": [
+        {
+          "opName": "callFunction",
+          "functionName": ["gisBlackListCallback"]
+        }
+      ]
+    },
+    {
+      "image": "images/buttons/WeiFaChaXun.png",
+      "id": "WFSJCX",
+      "label": "违法数据查询",
+      "operations": [
+        {
+          "opName": "callFunction",
+          "functionName": ["gisIllegalCallback"]
+        }
+      ]
+    },
+    {
+      "image": "images/buttons/ZaDao.png",
+      "id": "JTZS",
+      "label": "交通指数",
+      "operations": [
+        {
+          "opName": "callFunction",
+          "functionName": ["gisIndexRegionCallback"]
+        }
+      ]
+    },
+    {
+      "image": "images/buttons/FaBuDuan.png",
+      "id": "MainFBD",
+      "label": "三环八纵十二横",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["MainFBD"]
+        }
+      ]
+    },
+    {
+      "image": "images/buttons/GangDian.png",
+      "id": "dutySpot",
+      "label": "勤务岗点",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["dutySpot"]
+        }
+      ]
+    },
+    {
+      "image": "images/buttons/GangDianSP.png",
+      "id": "dutySpSpot",
+      "label": "专项岗点",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["dutySpSpot"]
+        }
+      ]
+    },
+    {
+      "image": "images/buttons/ShiGong-blue.png",
+      "id": "constructGisPoint",
+      "label": "占道施工",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["constructGisPoint"]
+        }
+      ]
+    },
+    {
+      "image": "images/buttons/FaBuDuan3.png",
+      "id": "MainFBD3",
+      "label": "三环",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["MainFBD3"]
+        }
+      ]
+    },
+    {
+      "image": "images/buttons/FaBuDuan8.png",
+      "id": "MainFBD8",
+      "label": "八纵",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["MainFBD8"]
+        }
+      ]
+    },
+    {
+      "image": "images/buttons/FaBuDuan12.png",
+      "id": "MainFBD12",
+      "label": "十二横",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["MainFBD12"]
+        }
+      ]
+    },
+    {
+      "image": "images/buttons/GangDianSP.png",
+      "id": "KaKouLiuLiang",
+      "label": "卡口流量",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["KaKouLiuLiang"]
+        },
+        {
+          "opName": "callFunction",
+          "functionName": ["flowRateFunction"]
+        }
+      ]
+    },
+    {
+      "image": "images/buttons/LuKou.png",
+      "id": "LK",
+      "label": "720度全景",
+      "operations": [
+        {
+          "opName": "changeLayer",
+          "opParam": ["LK"]
+        }
+      ]
+    }
+  ]
+}

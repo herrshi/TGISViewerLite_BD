@@ -1,0 +1,244 @@
+@charset "utf-8";
+
+.jimu-widget-POISearch {
+
+}
+
+/*-------重置==结束-------*/
+
+/*弹出框*/
+.popup_box {
+  float: left;
+}
+
+.popup_head {
+  overflow: hidden;
+  background: #607da6;
+  border-radius: 5px 5px 0 0;
+}
+
+.popup_head_title {
+  float: left;
+  text-indent: 13px;
+  line-height: 40px;
+  height: 40px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.popup_head_title_small {
+  float: left;
+  text-indent: 17px;
+  line-height: 35px;
+  font-size: 14px;
+  color: #fff;
+  height: 35px;
+}
+
+.popup_close {
+  float: right;
+  margin: 15px 12px 0 0;
+}
+
+.popup_icon_down {
+  float: right;
+  margin: 12px 12px 0 0;
+  width: 15px;
+  height: 10px;
+  background: url(images/arrow_down.png) no-repeat center center;
+  display: block;
+  cursor: pointer
+}
+
+.popup_icon_down:hover {
+  background: url(images/arrow_down_hover.png) no-repeat center center;
+}
+
+.popup_icon_up {
+  float: right;
+  margin: 12px 12px 0 0;
+  width: 15px;
+  height: 10px;
+  background: url(images/arrow_up.png) no-repeat center center;
+  display: block;
+  cursor: pointer
+}
+
+.popup_icon_up:hover {
+  background: url(images/arrow_up_hover.png) no-repeat center center;
+}
+
+.popup_inner {
+  height: 50px;
+  background: #dceefd;
+  border: #a9d2fb solid 1px;
+  border-top: none;
+}
+
+.popup_result {
+  height: 1000px;
+  display: none;
+  background: #dceefd;
+  border: #a9d2fb solid 1px;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+}
+
+/*表格样式*/
+.table_no {
+  margin: 0 10px 10px 10px;
+  border: none;
+  border-collapse: collapse;
+  color: #777;
+}
+
+.table_no th {
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+  color: #000;
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+.table_no td {
+  text-align: left;
+  line-height: 18px;
+  word-break: break-all;
+  padding: 5px;
+}
+
+.table_no a {
+  color: #777;
+}
+
+.table_no a:hover {
+  color: #0f68b4;
+  text-decoration: underline;
+}
+
+.gis_rlist {
+  color: #fff;
+  background: none;
+}
+
+.gis_rlist li {
+  padding: 7px 18px;
+  border-bottom: #7d9dca solid 1px
+}
+
+.gis_rlist li:hover {
+  background: #527ebc
+}
+
+.gis_rlist li:last-child {
+  border: none
+}
+
+.popup_box .popup_inner02 {
+  display: none; /*position: absolute;*/
+}
+
+.popup_box:hover .popup_inner02 {
+  display: block;
+}
+
+/*画笔工具按钮*/
+.btn_blue, .btn_blue:hover {
+  margin: 0 5px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #999;
+  border: 0;
+  font-size: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+  cursor: pointer
+}
+
+.icon_draw01 {
+  background: #576e97 url(images/icon_draw01.png) no-repeat center center
+}
+
+.icon_draw02 {
+  background: #576e97 url(images/icon_draw02.png) no-repeat center center
+}
+
+.icon_draw03 {
+  background: #576e97 url(images/icon_draw03.png) no-repeat center center
+}
+
+.icon_draw04 {
+  background: #576e97 url(images/icon_draw04.png) no-repeat center center
+}
+
+.icon_draw05 {
+  background: #576e97 url(images/icon_draw05.png) no-repeat center center
+}
+
+.icon_draw06 {
+  background: #576e97 url(images/icon_draw06.png) no-repeat center center
+}
+
+.icon_draw07 {
+  background: #576e97 url(images/icon_draw07.png) no-repeat center center
+}
+
+.btn_blue:hover, .btn_click {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #999;
+  border: 0;
+  background-color: rgba(80, 139, 233, 0.8);
+  font-size: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+}
+
+.drawarea {
+  clear: both;
+  margin-top: 10px;
+  border: #c3ddf3 solid 1px;
+}
+
+.drawarea_btn {
+  background: #d1e2f3;
+  padding: 5px 10px 3px 0;
+  text-align: right
+}
+
+.draw_box {
+  clear: both;
+  border-top: #c3ddf3 solid 1px;
+  background: white;
+  height: 100px;
+}
+
+.btn_blue100 {
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: 微软雅黑, serif;
+  background: url(images/btn_blue100.png) no-repeat;
+  width: 100px;
+  height: 27px;
+  line-height: 27px;
+  font-weight: bold
+}
+
+.btn_blue100:hover {
+  background: url(images/btn_blue100_click.png) no-repeat;
+}
+
+.btn_centerbox {
+  text-align: center
+}
+
+
+
+
