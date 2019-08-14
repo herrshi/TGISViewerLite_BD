@@ -194,11 +194,15 @@ define([
 
     onTopicHandler_addPoints: function(params) {
       var paramsObj = JSON.parse(params);
+
       var defaultIcon = this._getIcon(paramsObj.defaultSymbol);
-      var coordinateSystem = paramsObj.coordinateSystem || "WGS84";
+      var coordinateSystem = paramsObj.coordinateSystem;
+      var defaultVisible = paramsObj.defaultVisible !== false;
 
       paramsObj.points.forEach(function(pointObj) {
         var geometry = pointObj.geometry;
+        var visible = pointObj.visible === undefined ? defaultVisible : pointObj.visible;
+
         if (!isNaN(geometry.x) && !isNaN(geometry.y)) {
           //转换坐标系
           var newXY = jimuUtils.coordTransform(geometry.x, geometry.y, false, coordinateSystem);
@@ -208,10 +212,13 @@ define([
           var marker;
           if (icon !== null) {
             marker = L.marker([geometry.y, geometry.x], {
-              icon: icon
+              icon: icon,
+              opacity: visible ? 1 : 0
             });
           } else {
-            marker = L.marker([geometry.y, geometry.x]);
+            marker = L.marker([geometry.y, geometry.x], {
+              opacity: visible ? 1 : 0
+            });
           }
           var content;
           for (var i = 0; i < this.config.length; i++) {
@@ -220,7 +227,7 @@ define([
               content = this.config[i].content;
             }
           }
-          if (pointObj.fields && content && content!="*") {
+          if (pointObj.fields && content && content !== "*") {
             var contextObj = {};
             for (var field in pointObj.fields) {
               content = content.replace(

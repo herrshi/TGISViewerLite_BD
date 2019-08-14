@@ -66,38 +66,38 @@
         },
         "mapContainer",
         function() {
-          map.addPoints({
-            defaultSymbol: {
-              url: "images/RedSphere.png",
-              xoffset: 32,
-              yoffset: 32
-            },
-            points: [
-              {
-                id: "pt001",
-                type: "police",
-                geometry: { x: 103.8535, y: 36.0342 },
-                symbol: {
-                  url: "images/BlueSphere.png",
-                  xoffset: 32,
-                  yoffset: 32
-                },
-                fields: { 姓名: "张三", 状态: "在岗" }
-              },
-              {
-                id: "pt002",
-                type: "police",
-                geometry: { x: 103.8431, y: 36.053 },
-                content:
-                  "<b>金昌北路-南滨河路</b><select><option value='111'>南滨河路-静宁路(北) 北向南.南滨河路-静宁路(东) 东向西</option></select>"
-              },
-              {
-                id: "pt003",
-                type: "police",
-                geometry: { x: 103.8541, y: 36.05 }
-              }
-            ]
-          });
+          // map.addPoints({
+          //   defaultSymbol: {
+          //     url: "images/RedSphere.png",
+          //     xoffset: 32,
+          //     yoffset: 32
+          //   },
+          //   points: [
+          //     {
+          //       id: "pt001",
+          //       type: "police",
+          //       geometry: { x: 103.8535, y: 36.0342 },
+          //       symbol: {
+          //         url: "images/BlueSphere.png",
+          //         xoffset: 32,
+          //         yoffset: 32
+          //       },
+          //       fields: { 姓名: "张三", 状态: "在岗" }
+          //     },
+          //     {
+          //       id: "pt002",
+          //       type: "police",
+          //       geometry: { x: 103.8431, y: 36.053 },
+          //       content:
+          //         "<b>金昌北路-南滨河路</b><select><option value='111'>南滨河路-静宁路(北) 北向南.南滨河路-静宁路(东) 东向西</option></select>"
+          //     },
+          //     {
+          //       id: "pt003",
+          //       type: "police",
+          //       geometry: { x: 103.8541, y: 36.05 }
+          //     }
+          //   ]
+          // });
           // map.addLines('{"defaultSymbol":{"color":"#ff0000"},"lines":[{"id":"wx001","type":"GPS","geometry":{"paths":[[[103.8535,36.0342],[103.8431,36.053],[103.8541,36.05]]]},"symbol":{"alpha":0.5, "width":5}}]}');
           // map.hideBottomToolbar();
           //map.startDrawOverlay({"drawType":"point"});
@@ -117,34 +117,34 @@
       );
 
       function Test1ClickHandler() {
-        map.addPoints({
-          defaultSymbol: {
-            url: "images/RedSphere.png",
-            xoffset: 32,
-            yoffset: 32
-          },
-          points: [
-            {
-              id: "pt001",
-              type: "police",
-              geometry: { x: 103.8535, y: 36.0342 },
-              symbol: {
-                url: "images/BlueSphere.png",
-                xoffset: 32,
-                yoffset: 32
-              },
-              fields: { 姓名: "张三", 状态: "在岗" }
-            },
-            {
-              id: "pt002",
-              type: "police",
-              geometry: { x: 103.8431, y: 36.053 },
-              content:
-                "<b>金昌北路-南滨河路</b><select><option value='111'>南滨河路-静宁路(北) 北向南.南滨河路-静宁路(东) 东向西</option></select>"
-            },
-            { id: "pt003", type: "police", geometry: { x: 103.8541, y: 36.05 } }
-          ]
-        });
+        // map.addPoints({
+        //   defaultSymbol: {
+        //     url: "images/RedSphere.png",
+        //     xoffset: 32,
+        //     yoffset: 32
+        //   },
+        //   points: [
+        //     {
+        //       id: "pt001",
+        //       type: "police",
+        //       geometry: { x: 103.8535, y: 36.0342 },
+        //       symbol: {
+        //         url: "images/BlueSphere.png",
+        //         xoffset: 32,
+        //         yoffset: 32
+        //       },
+        //       fields: { 姓名: "张三", 状态: "在岗" }
+        //     },
+        //     {
+        //       id: "pt002",
+        //       type: "police",
+        //       geometry: { x: 103.8431, y: 36.053 },
+        //       content:
+        //         "<b>金昌北路-南滨河路</b><select><option value='111'>南滨河路-静宁路(北) 北向南.南滨河路-静宁路(东) 东向西</option></select>"
+        //     },
+        //     { id: "pt003", type: "police", geometry: { x: 103.8541, y: 36.05 } }
+        //   ]
+        // });
         map.showJurisdiction();
         map.addPoints({
           defaultSymbol: {
@@ -152,24 +152,16 @@
             xoffset: 32,
             yoffset: 32
           },
-          coordinateSystem: "BD09",
+          defaultVisible: false,
           points: [
             {
               id: "pt001",
               type: "police",
-              geometry: { x: 121.44028, y: 31.361456 }
-            }
-          ]
-        });
-        map.addPoints({
-          defaultSymbol: {
-            url: "images/RedSphere.png",
-            xoffset: 32,
-            yoffset: 32
-          },
-          points: [
+              geometry: { x: 121.44028, y: 31.361456 },
+              visible: true
+            },
             {
-              id: "pt001",
+              id: "pt002",
               type: "police",
               geometry: { x: 121.4462, y: 31.2945 }
             }
@@ -189,25 +181,27 @@
         // map.geometrySearch('{"userDraw":true,"geoType":"circle","types":["police"]}', function (results) {
         //   console.log(results);
         // });
-        map.geometrySearch(
-          '{"userDraw":false,"geoType":"circle","geometry":{"center":{"x":103.8535,"y":36.0342},"radius":200}}',
-          function(results) {
-            console.log(results);
-          }
-        );
+        // map.geometrySearch(
+        //   '{"userDraw":false,"geoType":"circle","geometry":{"center":{"x":103.8535,"y":36.0342},"radius":200}}',
+        //   function(results) {
+        //     console.log(results);
+        //   }
+        // );
         // map.startTrackPlayback('{"trackPoints":[{"x":103.8535,"y":36.0342,"time":"2018-04-11 11:38:45"},{"x":103.8431,"y":36.053,"time":"2018-04-11 11:38:45"},{"x":103.8541,"y":36.05,"time":"2018-04-11 11:38:45"}]}');
       }
 
       function Test2ClickHandler() {
+        map.showPoints({types: ["police"]});
+        map.hidePoints({ids: ["pt001"]});
         // map.stopDraw();
         // map.hidePoints('{"types":["police"]}');
         // map.addOD('{"type":"D","startPoint":{"x":103.8535,"y":36.0342},"endFlows":[{"endPoint":{"x":103.8431,"y":36.053},"flow":100},{"endPoint":{"x":103.8541,"y":36.05},"flow":150}]}\n');
         // map.deleteOD();
-        map.addPoints(
-          '{"defaultSymbol":{"url":"images/RedSphere.png","xoffset":32,"yoffset":32},"points":[{"id":"pt001","type":"police","geometry":{"x":103.8535,"y":36.0342},"symbol":{"url":"images/BlueSphere.png","xoffset":32,"yoffset":32},"fields":{"姓名":"张三","状态":"在岗"}},{"id":"pt002","type":"police","geometry":{"x":103.8431,"y":36.053},"content":"<b>金昌北路-南滨河路</b><select><option value=' +
-            "111" +
-            '>南滨河路-静宁路(北) 北向南.南滨河路-静宁路(东) 东向西</option></select>"},{"id":"pt003","type":"police","geometry":{"x":103.8541,"y":36.05}}]}'
-        );
+        // map.addPoints(
+        //   '{"defaultSymbol":{"url":"images/RedSphere.png","xoffset":32,"yoffset":32},"points":[{"id":"pt001","type":"police","geometry":{"x":103.8535,"y":36.0342},"symbol":{"url":"images/BlueSphere.png","xoffset":32,"yoffset":32},"fields":{"姓名":"张三","状态":"在岗"}},{"id":"pt002","type":"police","geometry":{"x":103.8431,"y":36.053},"content":"<b>金昌北路-南滨河路</b><select><option value=' +
+        //     "111" +
+        //     '>南滨河路-静宁路(北) 北向南.南滨河路-静宁路(东) 东向西</option></select>"},{"id":"pt003","type":"police","geometry":{"x":103.8541,"y":36.05}}]}'
+        // );
       }
 
       function Test3ClickHandler() {

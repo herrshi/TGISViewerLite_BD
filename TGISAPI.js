@@ -60,11 +60,13 @@ var TMap = {
    *            单位为px.
    * @param params: string, json字符串
    *   defaultSymbol: optional, 默认样式.
+   *   defaultVisible: option, 默认是否显示. 默认为true.
    *   coordinateSystem: optional, 点位坐标系, "WGS84" | "GCJ02" | "BD09"
-   *     默认WGS84
+   *     默认和底图一致
    *   points: [{}], required.
    *     id: string, required. 编号
    *     type: string, optional. 类型
+   *     visible: boolean, optional. 是否显示. 默认为true.
    *     fields: {}, optional. 属性
    *       点击以后在弹出框中显示fields中的键值对
    *     content: string, optional. html, 自定义的弹出框内容. 使用以后会覆盖fields.

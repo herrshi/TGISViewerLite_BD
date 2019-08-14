@@ -61,7 +61,7 @@ define([
      * 派出所辖区和警力统计
      * 从json读取派出所辖区, 符号化后显示在地图上
      * */
-    _readJurisdictionLayer: async function() {
+    _readJurisdictionLayer: function() {
       //派出所辖区区域
       fetch(
         window.path + "configs/JurisdictionPolice/bsga_v2.geojson"

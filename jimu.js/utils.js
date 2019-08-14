@@ -584,10 +584,16 @@ define([
     };
 
     //将点位坐标转到地图坐标
-    mo.coordTransform = function(x, y, inverse = false, coordinateSystem = "WGS84") {
+    mo.coordTransform = function(x, y, inverse, coordinateSystem) {
+      if (inverse === null) {
+        inverse = false;
+      }
 
       var mapCoordSystem = ConfigManager.getInstance().appConfig.map
-        .coordinateSystem;
+        .coordinateSystem || "WGS84";
+      if (!coordinateSystem) {
+        coordinateSystem = mapCoordSystem;
+      }
       //坐标系相同不用转换
       if (mapCoordSystem === coordinateSystem) {
         return [x, y];
