@@ -1,5 +1,5 @@
 var //TGISViewer所在的url
-path = null;
+  path = null;
 //项目配置文件
 projectConfig = null;
 //全部加载完成以后的回调
@@ -82,8 +82,8 @@ var TMap = {
    * */
   addPoints: function(params) {
     require(["dojo/topic"], function(topic) {
-      if (typeof params == "object") {
-        params = JSON.stringify(params);
+      if (typeof params == "string") {
+        params = JSON.parse(params);
       }
       topic.publish("addPoints", params);
     });
@@ -202,10 +202,83 @@ var TMap = {
   },
 
   /**
+   * 在地图上显示聚合点
+   * @param params: string/Obj, required.
+   *   points: [], required. 要聚合的点位
+   *     id: string.
+   *     type: string.
+   *     fields: object.
+   *     geometry: object.
+   *     symbol: object.
+   *   defaultVisible: boolean, optional. 默认为true.
+   *   defaultSymbol: {}, optional.
+   *   defaultInfoTemplate: object, optional.
+   *   coordinateSystem: string. 点位坐标系. 默认为地图坐标系
+   *   distance: int, optional. 聚合距离, 默认100.
+   *   zoom: int, optional. 显示聚合效果的最大层级. 超过此层级时取消聚合, 显示原始点位. 默认为始终聚合.
+   * */
+  addOverlaysCluster: function(params) {
+    require(["dojo/topic"], function(topic) {
+      topic.publish("addOverlaysCluster", params);
+    });
+  },
+
+  /**
+   * 删除聚合点
+   * @param params: object, optional
+   *   types: [string]
+   * 不传参数时删除所有聚合点
+   * */
+  deleteOverlaysCluster: function(params) {
+    if (typeof params === "string") {
+      params = JSON.parse(params);
+    }
+    require(["dojo/topic"], function(topic) {
+      topic.publish("deleteOverlaysCluster", params);
+    });
+  },
+
+  /**
+   * 显示聚合点
+   * @param params: object, optional
+   *   types: [string]
+   * 不传参数时显示所有聚合点
+   * */
+  showOverlaysCluster: function(params) {
+    if (typeof params === "string") {
+      params = JSON.parse(params);
+    }
+    require(["dojo/topic"], function(topic) {
+      topic.publish("showOverlaysCluster", params);
+    });
+  },
+
+  /**
+   * 隐藏聚合点
+   * @param params: object, optional
+   *   types: [string]
+   * 不传参数时隐藏所有聚合点
+   * */
+  hideOverlaysCluster: function(params) {
+    if (typeof params === "string") {
+      params = JSON.parse(params);
+    }
+    require(["dojo/topic"], function(topic) {
+      topic.publish("hideOverlaysCluster", params);
+    });
+  },
+
+  /**
    * 开始绘制
    * @param params: string, json字符串
    *   type: string, required. 绘制类型
    *     "point" || "line" || "polygon" || "circle" || "rectangle"
+   *   showMeasure: boolean, optional. 画线时显示长度, 面显示周长、面积
+   *     默认false
+   *   continuousDraw: boolean, optional. 画完一个要素时不结束绘制, 继续画下一个
+   *     默认false
+   *   clearRepeat: boolean, optional. 连续绘制时, 画下一个时清除上一个要素, 只保留一个要素
+   *     默认false
    * @param callback: function, 回传坐标的回调函数
    * */
   startDraw: function(params, callback) {
@@ -456,6 +529,18 @@ var TMap = {
   hideJurisdiction: function() {
     require(["dojo/topic"], function(topic) {
       topic.publish("hideJurisdiction");
+    });
+  },
+
+  /**
+   * 设置地图中心点
+   * @param params: required.
+   *   x: number
+   *   y: number
+   * */
+  setMapCenter: function(params) {
+    require(["dojo/topic"], function(topic) {
+      topic.publish("setMapCenter", params);
     });
   }
 };

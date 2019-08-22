@@ -594,6 +594,8 @@ define([
       if (!coordinateSystem) {
         coordinateSystem = mapCoordSystem;
       }
+      mapCoordSystem = mapCoordSystem.toUpperCase();
+      coordinateSystem = coordinateSystem.toUpperCase();
       //坐标系相同不用转换
       if (mapCoordSystem === coordinateSystem) {
         return [x, y];

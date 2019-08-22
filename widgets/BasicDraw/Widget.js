@@ -82,9 +82,9 @@ define([
     onStartDraw: function(params) {
       var paramsObj = JSON.parse(params.params);
       this._drawType = paramsObj.type;
-      this._showMeasure = !!paramsObj.showMeasure;
-      this._continuousDraw = !!paramsObj.continuousDraw;
-      this._clearRepeat = !!paramsObj.clearRepeat;
+      this._showMeasure = paramsObj.showMeasure === true;
+      this._continuousDraw = paramsObj.continuousDraw === true;
+      this._clearRepeat = paramsObj.clearRepeat === true;
       this._callbackFunction = params.callback;
       //禁用双击放大, 将双击事件留给停止绘制
       this.map.doubleClickZoom.disable();
@@ -140,7 +140,7 @@ define([
     },
 
     onMapClick: function(event) {
-      if (this._clearRepeat && this._drawType.toLowerCase() == "point") {
+      if (this._clearRepeat && this._drawType.toLowerCase() === "point") {
         this._drawLayer.clearLayers();
         this._pointList = [];
       }
@@ -245,6 +245,10 @@ define([
             this._currentPolygon.addLatLng(point);
           }
           break;
+      }
+
+      if (!this._continuousDraw) {
+        this.onStopDraw();
       }
     },
 
@@ -397,6 +401,7 @@ define([
         this.onStopDraw();
       }
     },
+
     _onGetDrawGraphic: function(marker) {
       var obj = {};
       obj.type = marker.type;
@@ -411,6 +416,7 @@ define([
       }
       return obj;
     },
+
     _getPath: function(latlngs, type) {
       var arr = [];
       if (type == "polyline") {
@@ -429,6 +435,7 @@ define([
         return arr;
       }
     },
+
     onMapMouseDown: function(event) {
       if (this._clearRepeat) {
         this._drawLayer.clearLayers();

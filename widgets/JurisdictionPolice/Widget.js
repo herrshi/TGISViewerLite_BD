@@ -93,7 +93,7 @@ define([
                     var polygon = L.polygon(leafletPaths, {
                       color: "#3f51b5",
                       opacity: 1,
-                      weight: 3,
+                      weight: 1,
                       fillColor: colorRamps[index % (colorRamps.length)],
                       fillOpacity: 0.4,
                       attribution: feature.properties

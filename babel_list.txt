@@ -1,0 +1,1 @@
+babel widgets/Cluster/Widget.js -o D:\apache-tomcat-8.5.41\webapps\TGISViewerLite_BD\widgets\Cluster\Widget.js

@@ -44,6 +44,8 @@ define([
         "hideNavigationBar",
         lang.hitch(this, this._onTopicHandler_hideNavigationBar)
       );
+
+      topic.subscribe("setMapCenter", lang.hitch(this, this._onTopicHandler_setMapCenter));
     },
 
     showMap: function() {
@@ -66,6 +68,7 @@ define([
       this.map = map;
       topic.publish("mapLoaded", this.map);
     },
+    
     _createMap: function(map, layerConfig) {
       var keyProperties = ["label", "url", "type"];
       var options = [];
@@ -184,7 +187,7 @@ define([
       if (layerConfig.visible) {
         layer.addTo(map);
         if (layerConfig.refreshInterval) {
-          this._setrefresh(map, layer);
+          this._setRefresh(map, layer);
         }
       }
 
@@ -201,7 +204,8 @@ define([
         }).addTo(map);
       }
     },
-    _setrefresh: function(map, layer) {
+
+    _setRefresh: function(map, layer) {
       var layerConfig = layer.layerConfig;
       var index = layer.index;
       var interval = setInterval(
@@ -225,6 +229,7 @@ define([
       );
       this._intervals.push({ timer: interval, label: layer.label });
     },
+
     _refreshLayer: function(map, layerConfig, index) {
       switch (layerConfig.type) {
         case "tile":
@@ -326,6 +331,7 @@ define([
 
       this.layerList.push(layer);
     },
+
     _clearInterval: function(label) {
       this._intervals.forEach(function(interval, index) {
         if (interval.label === label) {
@@ -334,6 +340,7 @@ define([
         }
       }, this);
     },
+
     _onTopicHandler_setLayerVisibility: function(params) {
       this.layerList.forEach(function(layer) {
         if (layer.label === params.label) {
@@ -342,7 +349,7 @@ define([
             layer.setZIndex(layer.index);
             if (layer.refreshInterval) {
               this._clearInterval(layer.label);
-              this._setrefresh(this.map, layer);
+              this._setRefresh(this.map, layer);
             }
           } else if (!params.visible && this.map.hasLayer(layer)) {
             this.map.removeLayer(layer);
@@ -351,17 +358,25 @@ define([
         }
       }, this);
     },
+
     _onTopicHandler_showOverviewMap: function() {
       this._miniMap._container.style.display = "block";
     },
+
     _onTopicHandler_hideOverviewMap: function() {
       this._miniMap._container.style.display = "none";
     },
+
     _onTopicHandler_showNavigationBar: function() {
       query(".leaflet-control-zoom").style("display", "block");
     },
+
     _onTopicHandler_hideNavigationBar: function() {
       query(".leaflet-control-zoom").style("display", "none");
+    },
+    
+    _onTopicHandler_setMapCenter: function (params) {
+      this.map.panTo([params.y, params.x]);
     }
   });
 

@@ -193,7 +193,7 @@ define([
     },
 
     onTopicHandler_addPoints: function(params) {
-      var paramsObj = JSON.parse(params);
+      var paramsObj = params;
 
       var defaultIcon = this._getIcon(paramsObj.defaultSymbol);
       var coordinateSystem = paramsObj.coordinateSystem;
@@ -251,16 +251,17 @@ define([
           }
           marker.id = pointObj.id;
           marker.type = pointObj.type;
+          marker.attributes = pointObj.fields;
           marker.addTo(this._pointLayer);
 
           marker.on(
             "click",
             lang.hitch(this, function(evt) {
-              //console.log(evt);
               var point = evt.sourceTarget || evt.target;
               var id = point.id;
               var type = point.type;
               showGisDeviceInfo(type, id);
+              showGisDeviceDetailInfo(type, id, point.attributes);
             })
           );
         }

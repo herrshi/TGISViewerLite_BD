@@ -33,7 +33,7 @@
         "label": "百度实时路况",
         "url": "http://128.64.130.247:8219/traffic/?qt=traffic",
         "proxyUrl":
-          "http://localhost:8090/TGISViewerLite_v200/proxy/proxy.ashx",
+          "http://localhost:8090/TGISViewerLite_BD/proxy/proxy.ashx",
         "type": "BD_time_own",
         "refreshInterval": 10,
         "visible": false
@@ -104,6 +104,11 @@
       "uri": "widgets/JurisdictionPolice/Widget",
       "name": "JurisdictionPoliceMap",
       "id": "JurisdictionPoliceWidget"
+    },
+    {
+      "uri": "widgets/Cluster/Widget",
+      "name": "Cluster",
+      "id": "ClusterWidget"
     }
   ]
 }

@@ -56,6 +56,7 @@ define([
 
     onTopicHandler_stopGeometrySearch: function() {
       topic.publish("clearDraw");
+      this._drawLayer.clearLayers();
     },
 
     _drawEndCallback: function(result) {
