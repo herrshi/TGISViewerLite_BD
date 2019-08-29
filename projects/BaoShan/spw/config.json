@@ -3,7 +3,7 @@
     "basemaps": [
       {
         "label": "百度矢量地图",
-        "url": "http://15.192.16.7:8219/tile",
+        "url": "http://{gisServer}/tile",
         "type": "BD_vec_own",
         "visible": true
       },
@@ -28,13 +28,14 @@
       },
       {
         "label": "百度实时路况",
-        "url": "http://15.192.16.7:8219/traffic/?qt=traffic",
+        "url": "http://{gisServer}/traffic/?qt=traffic",
         "proxyUrl":"",
         "type": "BD_time_own",
         "refreshInterval": 10,
         "visible": false
       }
     ],
+    "gisServer": "15.192.16.7:8219",
     "mapOptions": {
       "center": [31.39351155,121.4843501],
       "zoom": 15
@@ -105,6 +106,12 @@
       "uri": "widgets/Cluster/Widget",
       "name": "Cluster",
       "id": "ClusterWidget"
+    },
+    {
+      "uri": "widgets/MixinSearch/Widget",
+      "config": "configs/MixinSearch/config_BaoShan.json",
+      "name": "MixinSearch",
+      "id": "MixinSearchWidget"
     }
   ]
 }

@@ -1,0 +1,5 @@
+{
+  "poi": {
+    "url": "http://{gisServer}/search"
+  }
+}

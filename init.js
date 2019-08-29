@@ -47,9 +47,9 @@ var dojoConfig, jimuConfig;
     ];
 
     resources = [
-      //ie7/8没有JSON
-      window.path + "libs/json3.min.js",
       window.path + "libs/coordTransform.js",
+      //turf
+      window.path + "libs/turf.min.js",
       //leaflet标准库
       window.path + "libs/leaflet/leaflet.css",
       window.path + "libs/leaflet/leaflet.js",

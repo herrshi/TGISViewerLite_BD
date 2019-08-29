@@ -1,10 +1,12 @@
 define([
   "dojo/_base/declare",
   "dojo/_base/lang",
+  "dojo/_base/fx",
   "dojo/topic",
+  "dojo/dom-style",
   "jimu/BaseWidget",
   "jimu/utils"
-], function(declare, lang, topic, BaseWidget, jimuUtils) {
+], function(declare, lang, fx, topic, domStyle, BaseWidget, jimuUtils) {
   return declare([BaseWidget], {
     _clusterLayers: [],
 
@@ -27,14 +29,19 @@ define([
         "hideOverlaysCluster",
         lang.hitch(this, this.onTopicHandler_hideOverlaysCluster)
       );
+      topic.subscribe(
+        "findFeature",
+        lang.hitch(this, this.onTopicHandler_findFeature)
+      );
     },
 
     _getClusterLayer: function(type) {
-      this._clusterLayers.forEach(layer => {
+      for (let i = 0; i < this._clusterLayers.length; i++) {
+        const layer = this._clusterLayers[i];
         if (layer.type === type) {
           return layer;
         }
-      });
+      }
       return undefined;
     },
 
@@ -75,6 +82,7 @@ define([
           layerOptions.maxClusterRadius = distance;
         }
         layer = L.markerClusterGroup(layerOptions);
+        layer.type = type;
         this._clusterLayers.push(layer);
         if (!defaultVisible) {
           this.map.addLayer(layer);
@@ -159,7 +167,7 @@ define([
       } else {
         const { types } = params;
         types.forEach(type => {
-          const layer = this._getClusterLayer(type, false);
+          const layer = this._getClusterLayer(type);
           if (layer && !this.map.hasLayer(layer)) {
             this.map.addLayer(layer);
           }
@@ -177,12 +185,42 @@ define([
       } else {
         const { types } = params;
         types.forEach(type => {
-          const layer = this._getClusterLayer(type, false);
+          const layer = this._getClusterLayer(type);
           if (layer && this.map.hasLayer(layer)) {
             this.map.removeLayer(layer);
           }
         });
       }
+    },
+
+    onTopicHandler_findFeature: function(params) {
+      const {type, id, zoom} = params;
+      this._clusterLayers.forEach(layer => {
+        if (!type || layer.type === type) {
+          layer.eachLayer(marker => {
+            if (marker.id === id) {
+              this.map.flyTo(marker.getLatLng(), zoom);
+              setTimeout(() => this.flashFeature(marker), 1000);
+              // this.flashFeature(marker);
+            }
+          });
+        }
+      });
+    },
+
+    flashFeature: function(marker) {
+      const interval = setInterval(() => {
+        if (domStyle.get(marker._icon, "opacity") === "0") {
+          fx.fadeIn({node: marker._icon, duration: 300}).play();
+        } else {
+          fx.fadeOut({node: marker._icon, duration: 300}).play();
+        }
+      }, 500);
+
+      setTimeout(() => {
+        clearInterval(interval);
+        domStyle.set(marker._icon, "opacity", "1");
+      }, 5000);
     }
   });
 });

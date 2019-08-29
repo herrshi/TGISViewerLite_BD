@@ -85,7 +85,7 @@ define([
             : [symbol.width, symbol.height];
         var anchor = [
           isNaN(symbol.xoffset) ? 0 : symbol.xoffset,
-          isNaN(symbol.yoffset) ? 0 : symbol.yoffset
+          isNaN(symbol.yoffset) ? symbol.height / 2 : symbol.yoffset
         ];
         return L.icon({
           iconUrl: url,
@@ -377,7 +377,7 @@ define([
     },
 
     onTopicHandler_findFeature: function(params) {
-      var paramsObj = JSON.parse(params);
+      var paramsObj = params;
       var id = paramsObj.id || paramsObj.ids[0];
 
       this.map.eachLayer(function(layer) {

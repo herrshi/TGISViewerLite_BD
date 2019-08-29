@@ -81,12 +81,13 @@ define([
       }
       var layer;
       var miniMapLayer;
+      layerConfig.url = layerConfig.url.replace(
+        /{gisServer}/i,
+        this.appConfig.map.gisServer
+      );
       switch (layerConfig.type) {
         case "tile":
-          var url = layerConfig.url.replace(
-            /{gisServer}/i,
-            this.appConfig.map.gisServer
-          );
+          var url = layerConfig.url;
           layer = L.tileLayer(url, options);
 
           if (layerConfig.label === this.appConfig.map.miniMap.layer) {

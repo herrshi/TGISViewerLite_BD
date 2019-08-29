@@ -67,17 +67,6 @@
       ]
     },
     {
-      "label": "街景",
-      "id": "jj",
-      "image": "images/buttons/jiejing-white.png",
-      "operations": [
-        {
-          "opName": "changeLayer",
-          "opParam": ["jj"]
-        }
-      ]
-    },
-    {
       "label": "全屏",
       "id": "qp",
       "image": "images/buttons/quanping-white.png",

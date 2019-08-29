@@ -361,13 +361,15 @@ var TMap = {
   /************************ Search BEGIN **************************/
   /**
    * 根据id查找要素
-   * @param params: string, json字符串
+   * @param params: json object/json string
    *   id: string, required.
+   *   type: string, optional.
+   *   zoom: number, optional.
    * */
   findFeature: function(params) {
     require(["dojo/topic"], function(topic) {
-      if (typeof params == "object") {
-        params = JSON.stringify(params);
+      if (typeof params == "string") {
+        params = JSON.parse(params);
       }
       topic.publish("findFeature", params);
     });
@@ -401,6 +403,136 @@ var TMap = {
   stopGeometrySearch: function() {
     require(["dojo/topic"], function(topic) {
       topic.publish("stopGeometrySearch");
+    });
+  },
+
+  /***
+   *
+   * @param params: object, required.
+   *   geometry: object, required. 搜索中心, 可以为点、线、面
+   *     点：
+   *       {"x" : -118.15, "y" : 33.80, "spatialReference" : {"wkid" : 4326}}
+   *     线：
+   *       {
+   *         "paths" : [[[-97.06138,32.837],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832]],
+   *                    [[-97.06326,32.759],[-97.06298,32.755]]],
+   *         "spatialReference" : {"wkid" : 4326}
+   *       }
+   *     面：
+   *       {
+   *         "rings" : [[[-97.06138,32.837],[-97.06133,32.836],[-97.06124,32.834],[-97.06127,32.832],
+   *                    [-97.06138,32.837]],[[-97.06326,32.759],[-97.06298,32.755],[-97.06153,32.749],
+   *                    [-97.06326,32.759]]],
+   *         "spatialReference" : {"wkid" : 4326}
+   *       }
+   *   radius: number, 搜索半径
+   *     default: 0, 不进行缓冲
+   *   showGeometry: boolean, 是否显示原始geometry
+   *     default: true
+   *   showBuffer: boolean, radius可用时, 是否显示搜索缓冲区
+   *     default: true
+   *   showResult: boolean, 是否显示搜索结果
+   *     default: true
+   *   contents: [object], 搜索内容
+   *     class: string, "poi" | "overlay" | "fbd"
+   *     types: string, 不指定时搜索此类型下所有要素
+   * @param callback: function, required.
+   *   回调函数
+   *   可使用promise或回调函数获取返回结果
+   * @example
+   *
+   {
+    center: [121.441, 31.159],
+    radius: 500,
+    showResult: true,
+    contents: [
+      {
+        class: "poi",
+        types: "路口名,道路名"
+      },
+      {
+        class: "overlay",
+        types: "police"
+      },
+      {
+        class: "fbd"
+        types: "城市道路,快速路"
+      }
+    ]
+   }
+   *
+   * @callback: 回调函数返回
+   {
+      results: [
+        {
+          class: "poi",
+          result: [
+	        id: "B0FFGQ9Q9Y",
+            name: "天目中路",
+            location: [121.455896, 31.247646]
+            type: "地名地址信息;交通地名;道路名"
+          ]
+        },
+	      {
+	        class: "fbd",
+	        result: [
+	          {
+		          id: "21252416912",
+		          name: "武康路(华山路->安福路)",
+		          location: [121.44019983601686, 31.213175770283573],
+		          type: "地面道路"
+		        },
+		        {
+		          id: "61191954001",
+		          name: "外圈吴中路下匝道至吴中路上匝道",
+		          location: [121.42395568881847, 31.185519213177798],
+		          type: "快速路"
+		        }
+	        ]
+	      },
+	      {
+	        class: "overlay",
+	        result: [
+	          {
+		          id: "",
+		          name: "",
+		          location: [],
+		          type: "police"
+		        }
+	        ]
+	      }
+      ]
+    }
+   */
+  mixinSearch: function(
+    {
+      geometry,
+      radius = 0,
+      showGeometry = true,
+      showBuffer = true,
+      showResult = true,
+      contents
+    } = {},
+    callback
+  ) {
+    require(["dojo/topic"], function(topic) {
+      topic.publish("mixinSearch", {
+        params: {
+          geometry,
+          radius,
+          showGeometry,
+          showBuffer,
+          showResult,
+          contents
+        },
+        callback
+      });
+    });
+  },
+
+  clearMixinSearch: function() {
+    require(["dojo/topic"], function(topic) {
+      topic.publish("clearMixinSearch");
     });
   },
   /************************ Search END **************************/
