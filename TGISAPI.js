@@ -707,5 +707,11 @@ var TMap = {
     require(["dojo/topic"], function(topic) {
       topic.publish("setMapLevel", params);
     });
+  },
+
+  setMapCenterAndLevel: function (params) {
+    require(["dojo/topic"], function(topic) {
+      topic.publish("setMapCenterAndLevel", params);
+    });
   }
 };
