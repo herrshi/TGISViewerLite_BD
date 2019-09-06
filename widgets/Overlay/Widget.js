@@ -266,6 +266,8 @@ define([
           );
         }
       }, this);
+
+      this.publishData(this._pointLayer);
     },
 
     onTopicHandler_deletePoints: function(params) {

@@ -68,9 +68,15 @@ define([
     },
 
     onTopicHandler_addOverlaysCluster: function(params) {
-      const defaultIcon = this._getIcon(params.defaultSymbol);
-      const defaultVisible = params.defaultVisible !== false;
-      const { type, coordinateSystem, zoom, distance } = params;
+      const {
+        type,
+        coordinateSystem,
+        zoom,
+        distance,
+        defaultSymbol,
+        defaultVisible
+      } = params;
+      const defaultIcon = this._getIcon(defaultSymbol);
 
       let layer = this._getClusterLayer(type);
       if (!layer) {
@@ -84,7 +90,7 @@ define([
         layer = L.markerClusterGroup(layerOptions);
         layer.type = type;
         this._clusterLayers.push(layer);
-        if (!defaultVisible) {
+        if (defaultVisible) {
           this.map.addLayer(layer);
         }
       }
@@ -92,14 +98,16 @@ define([
       params.points.forEach(pointObj => {
         const { id, geometry, fields, symbol } = pointObj;
         if (!isNaN(geometry.x) && !isNaN(geometry.y)) {
-          const newXY = jimuUtils.coordTransform(
-            geometry.x,
-            geometry.y,
-            false,
-            coordinateSystem
-          );
-          geometry.x = newXY[0];
-          geometry.y = newXY[1];
+          if (coordinateSystem) {
+            const newXY = jimuUtils.coordTransform(
+              geometry.x,
+              geometry.y,
+              false,
+              coordinateSystem
+            );
+            geometry.x = newXY[0];
+            geometry.y = newXY[1];
+          }
           const icon = this._getIcon(symbol) || defaultIcon;
           let marker;
           if (icon !== null) {
@@ -125,6 +133,8 @@ define([
           );
         }
       });
+
+      this.publishData(this._clusterLayers);
     },
 
     onTopicHandler_deleteOverlaysCluster: function(params) {
@@ -194,7 +204,7 @@ define([
     },
 
     onTopicHandler_findFeature: function(params) {
-      const {type, id, zoom} = params;
+      const { type, id, zoom } = params;
       this._clusterLayers.forEach(layer => {
         if (!type || layer.type === type) {
           layer.eachLayer(marker => {
@@ -211,9 +221,9 @@ define([
     flashFeature: function(marker) {
       const interval = setInterval(() => {
         if (domStyle.get(marker._icon, "opacity") === "0") {
-          fx.fadeIn({node: marker._icon, duration: 300}).play();
+          fx.fadeIn({ node: marker._icon, duration: 300 }).play();
         } else {
-          fx.fadeOut({node: marker._icon, duration: 300}).play();
+          fx.fadeOut({ node: marker._icon, duration: 300 }).play();
         }
       }, 500);
 

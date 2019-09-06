@@ -109,6 +109,12 @@
       "uri": "widgets/Cluster/Widget",
       "name": "Cluster",
       "id": "ClusterWidget"
+    },
+    {
+      "uri": "widgets/MixinSearch/Widget",
+      "config": "configs/MixinSearch/config_BaoShan.json",
+      "name": "MixinSearch",
+      "id": "MixinSearchWidget"
     }
   ]
 }

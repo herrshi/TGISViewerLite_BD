@@ -204,9 +204,9 @@ var TMap = {
   /**
    * 在地图上显示聚合点
    * @param params: string/Obj, required.
+   *   type: string, required.
    *   points: [], required. 要聚合的点位
    *     id: string.
-   *     type: string.
    *     fields: object.
    *     geometry: object.
    *     symbol: object.
@@ -217,9 +217,27 @@ var TMap = {
    *   distance: int, optional. 聚合距离, 默认100.
    *   zoom: int, optional. 显示聚合效果的最大层级. 超过此层级时取消聚合, 显示原始点位. 默认为始终聚合.
    * */
-  addOverlaysCluster: function(params) {
+  addOverlaysCluster: function({
+    type,
+    points,
+    defaultVisible = true,
+    defaultSymbol = {},
+    defaultInfoTemplate = {},
+    distance = 100,
+    zoom = null,
+    coordinateSystem = null
+  } = {}) {
     require(["dojo/topic"], function(topic) {
-      topic.publish("addOverlaysCluster", params);
+      topic.publish("addOverlaysCluster", {
+        type,
+        points,
+        defaultVisible,
+        defaultSymbol,
+        defaultInfoTemplate,
+        distance,
+        zoom,
+        coordinateSystem
+      });
     });
   },
 
@@ -431,11 +449,13 @@ var TMap = {
    *     default: true
    *   showBuffer: boolean, radius可用时, 是否显示搜索缓冲区
    *     default: true
-   *   showResult: boolean, 是否显示搜索结果
+   *   showResult: boolean, optional. 是否显示搜索结果
    *     default: true
    *   contents: [object], 搜索内容
    *     class: string, "poi" | "overlay" | "fbd"
    *     types: string, 不指定时搜索此类型下所有要素
+   *   sort: string, optional. "asc" | "desc"
+   *     当geometry为点时，搜索结果将按去中心点距离排序。默认为升序。
    * @param callback: function, required.
    *   回调函数
    *   可使用promise或回调函数获取返回结果
@@ -511,7 +531,8 @@ var TMap = {
       showGeometry = true,
       showBuffer = true,
       showResult = true,
-      contents
+      contents,
+      sort = undefined
     } = {},
     callback
   ) {
@@ -523,7 +544,8 @@ var TMap = {
           showGeometry,
           showBuffer,
           showResult,
-          contents
+          contents,
+          sort
         },
         callback
       });
