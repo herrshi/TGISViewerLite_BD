@@ -696,5 +696,16 @@ var TMap = {
     require(["dojo/topic"], function(topic) {
       topic.publish("setMapCenter", params);
     });
+  },
+
+  /**
+   * 设置地图等级
+   * @param params: required.
+   *   level: number
+   * */
+  setMapLevel: function (params) {
+    require(["dojo/topic"], function(topic) {
+      topic.publish("setMapLevel", params);
+    });
   }
 };

@@ -46,6 +46,7 @@ define([
       );
 
       topic.subscribe("setMapCenter", lang.hitch(this, this._onTopicHandler_setMapCenter));
+      topic.subscribe("setMapLevel", lang.hitch(this, this._onTopicHandler_setMapLevel));
     },
 
     showMap: function() {
@@ -378,6 +379,10 @@ define([
     
     _onTopicHandler_setMapCenter: function (params) {
       this.map.panTo([params.y, params.x]);
+    },
+
+    _onTopicHandler_setMapLevel: function (params) {
+      this.map.setZoom(params.level);
     }
   });
 
