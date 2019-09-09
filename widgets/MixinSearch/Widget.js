@@ -121,7 +121,7 @@ define([
         sort
       } = overlayParam;
       const geometry = searchGeometry || centerGeometry;
-      const searchType = types ? types.split(",") : [];
+      const searchType = types ? types.replace(/\s+/g, "").split(",") : [];
 
       let results = [];
 
@@ -176,11 +176,27 @@ define([
     onReceiveData: function(name, widgetId, data, historyData) {
       if (widgetId === "ClusterWidget") {
         this._clusterGraphics = [];
+        //使用复制对象，否则清除clearMixinSearch时会将原始点位一起清除
         data.forEach(layerGroup => {
-          this._clusterGraphics = this._clusterGraphics.concat(layerGroup.getLayers().slice(0));
+          this._clusterGraphics = this._clusterGraphics.concat(
+            layerGroup.getLayers().map(graphic => {
+              const marker =  L.marker(graphic.getLatLng(), {
+                icon: graphic.getIcon()
+              });
+              marker.type = graphic.type;
+              return marker;
+            })
+          );
         });
       } else if (widgetId === "OverlayWidget") {
-        this._overlayGraphics = data.getLayers().slice(0);
+        //使用复制对象，否则清除clearMixinSearch时会将原始点位一起清除
+        this._overlayGraphics = data.getLayers().map(graphic => {
+          const marker =  L.marker(graphic.getLatLng(), {
+            icon: graphic.getIcon()
+          });
+          marker.type = graphic.type;
+          return marker;
+        });
       }
     }
   });
