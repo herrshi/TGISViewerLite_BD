@@ -147,7 +147,8 @@ define([
           const searchResult = {
             id: marker.id,
             type: marker.type,
-            location: { x: latlng.lng, y: latlng.lat }
+            location: { x: latlng.lng, y: latlng.lat },
+            fields: marker.fields
           };
           const resultPoint = turf.point([latlng.lng, latlng.lat]);
           if (centerPoint) {
@@ -179,25 +180,25 @@ define([
         //使用复制对象，否则清除clearMixinSearch时会将原始点位一起清除
         data.forEach(layerGroup => {
           this._clusterGraphics = this._clusterGraphics.concat(
-            layerGroup.getLayers().map(graphic => {
-              const marker =  L.marker(graphic.getLatLng(), {
-                icon: graphic.getIcon()
-              });
-              marker.type = graphic.type;
-              return marker;
-            })
+            layerGroup.getLayers().map(graphic => this._cloneMarker(graphic))
           );
         });
       } else if (widgetId === "OverlayWidget") {
         //使用复制对象，否则清除clearMixinSearch时会将原始点位一起清除
-        this._overlayGraphics = data.getLayers().map(graphic => {
-          const marker =  L.marker(graphic.getLatLng(), {
-            icon: graphic.getIcon()
-          });
-          marker.type = graphic.type;
-          return marker;
-        });
+        this._overlayGraphics = data
+          .getLayers()
+          .map(graphic => this._cloneMarker(graphic));
       }
+    },
+
+    _cloneMarker: function(marker) {
+      const cloned = L.marker(marker.getLatLng(), {
+        icon: marker.getIcon()
+      });
+      cloned.type = marker.type;
+      cloned.id = marker.id;
+      cloned.fields = marker.attributes;
+      return cloned;
     }
   });
 });
