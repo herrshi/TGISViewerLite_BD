@@ -395,26 +395,46 @@ var TMap = {
 
   /**
    * 图形搜索
-   * @param params: string, json字符串
-   *   userDraw: boolean, required.
-   *     true: 用户绘制图形
-   *     false: 参数传入图形
-   *   geoType: string, optional.
-   *     图形类型, 默认为polygon
-   *   geometry: object. optional
-   *   onlyVisible: boolean, optional.
-   *     是否只搜索可见要素.
-   *   types: [string], optional.
-   *     要搜索的要素类型. []代表所有要素类型.
-   *     onlyVisible=true时, 忽略此参数.
+   * 对用户绘制的图层进行搜索
+   * @param params: object
+   *   geoType: string, required. 图形类型
+   *     point(点, 需配合radius参数) | cycle(圆形) | rectangle(矩形) | polygon(多边形)
+   *   radius: number, optional. 搜索半径
+   *     default: 0, 不进行缓冲
+   *   showBuffer: boolean, radius可用时, 是否显示搜索缓冲区
+   *     default: true
+   *   showResult: boolean, optional. 是否显示搜索结果
+   *     default: true
+   *   contents: [object], 搜索内容
+   *     class: string, "poi" | "overlay" | "fbd"
+   *     types: string, 不指定时搜索此类型下所有要素
+   *   sort: string, optional. "asc" | "desc"
+   *     当geometry为点时，搜索结果将按去中心点距离排序。默认为升序。
    * @param callback: function
    * */
-  geometrySearch: function(params, callback) {
+  geometrySearch: function(
+    {
+      geoType,
+      radius = 0,
+      showBuffer = true,
+      showResult = true,
+      contents,
+      sort = "asc"
+    } = {},
+    callback
+  ) {
     require(["dojo/topic"], function(topic) {
-      if (typeof params == "object") {
-        params = JSON.stringify(params);
-      }
-      topic.publish("geometrySearch", { params: params, callback: callback });
+      topic.publish("geometrySearch", {
+        params: {
+          geoType,
+          radius,
+          showBuffer,
+          showResult,
+          contents,
+          sort
+        },
+        callback
+      });
     });
   },
 
@@ -425,7 +445,8 @@ var TMap = {
   },
 
   /***
-   *
+   * 图形搜索
+   * 对用户输入的图形进行搜索
    * @param params: object, required.
    *   geometry: object, required. 搜索中心, 可以为点、线、面
    *     点：
@@ -703,13 +724,13 @@ var TMap = {
    * @param params: required.
    *   level: number
    * */
-  setMapLevel: function (params) {
+  setMapLevel: function(params) {
     require(["dojo/topic"], function(topic) {
       topic.publish("setMapLevel", params);
     });
   },
 
-  setMapCenterAndLevel: function (params) {
+  setMapCenterAndLevel: function(params) {
     require(["dojo/topic"], function(topic) {
       topic.publish("setMapCenterAndLevel", params);
     });

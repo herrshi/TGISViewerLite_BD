@@ -23,6 +23,11 @@ define([
         "clearMixinSearch",
         lang.hitch(this, this.onTopicHandler_clearMixinSearch)
       );
+
+      topic.subscribe(
+        "geometrySearch",
+        lang.hitch(this, this.onTopicHandler_geometrySearch)
+      );
     },
 
     _getGeometryType: function(geometry) {
@@ -110,6 +115,59 @@ define([
 
     onTopicHandler_clearMixinSearch: function() {
       this._graphicsLayer.clearLayers();
+    },
+
+    onTopicHandler_geometrySearch: function(parameter) {
+      this._graphicsLayer.clearLayers();
+      topic.publish("clearDraw");
+
+      const { params, callback } = parameter;
+      const {
+        geoType,
+        radius,
+        showGeometry,
+        showBuffer,
+        showResult,
+        contents,
+        sort
+      } = params;
+
+      const drawParams = JSON.stringify({
+        type: geoType
+      });
+      topic.publish("startDraw", {
+        params: drawParams,
+        callback: originGeometry => {
+          //将leaflet polygon转到turf polygon
+          //turf polygon需要起止点重合
+          const turfRings = originGeometry.rings.slice(0);
+          turfRings[0].push(turfRings[0][0]);
+          const centerGeometry = turf.polygon(turfRings);
+
+          const searchResults = [];
+          for (const searchContent of contents) {
+            switch (searchContent.class) {
+              case "poi":
+                break;
+
+              case "overlay":
+                const overlayResult = this._overlaySearch({
+                  centerGeometry,
+                  searchGeometry: null,
+                  types: searchContent.types,
+                  showResult,
+                  sort
+                });
+                searchResults.push(overlayResult);
+                break;
+            }
+          }
+
+          if (typeof callback === "function") {
+            callback(searchResults);
+          }
+        }
+      });
     },
 
     _overlaySearch: function(overlayParam) {

@@ -160,6 +160,10 @@ define([
             var newXY = jimuUtils.coordTransform(point.lng, point.lat, true);
             this._callbackFunction({ x: newXY[0], y: newXY[1], type: "point" });
           }
+
+          if (!this._continuousDraw) {
+            this.onStopDraw();
+          }
           break;
 
         //线
@@ -245,10 +249,6 @@ define([
             this._currentPolygon.addLatLng(point);
           }
           break;
-      }
-
-      if (!this._continuousDraw) {
-        this.onStopDraw();
       }
     },
 
@@ -455,7 +455,10 @@ define([
       switch (this._drawType.toLowerCase()) {
         case "rectangle":
           if (this._callbackFunction) {
-            this._callbackFunction(this._tempRectangle);
+
+            this._tempRectangle.type = "polygon";
+            var geometry = this._onGetDrawGraphic(this._tempRectangle);
+            this._callbackFunction(geometry);
           }
           this._rectangleBounds = [];
           if (!this._continuousDraw) {

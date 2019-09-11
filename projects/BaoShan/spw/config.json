@@ -83,11 +83,6 @@
       "id": "BasicDrawWidget"
     },
     {
-      "uri": "widgets/GeometrySearch/Widget",
-      "name": "GeometrySearch",
-      "id": "GeometrySearchWidget"
-    },
-    {
       "uri": "widgets/TrackPlayback/Widget",
       "name": "TrackPlaybackSearch",
       "id": "TrackPlaybackWidget"

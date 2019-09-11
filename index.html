@@ -60,12 +60,12 @@
     <script src="simpleLoader.js"></script>
     <script src="TGISAPI.js"></script>
 
-    <script defer type="text/javascript">
+    <script type="text/javascript">
       var map = TMap.createNew(
         {
           viewerUrl: "http://localhost:8090/TGISViewerLite_BD/",
           config:
-            "http://localhost:8090/TGISViewerLite_BD/projects/BaoShan/config.json"
+            "http://localhost:8090/TGISViewerLite_BD/projects/BaoShan/spw/config.json"
         },
         "mapContainer",
         function() {
@@ -114,7 +114,7 @@
           map.hideTopToolbar();
           map.hideBottomToolbar();
           map.hideLayer({ label: "道路养护", ids: "" });
-          map.showJurisdiction();
+          // map.showJurisdiction();
           map.addPoints({
             defaultSymbol: {
               url: "images/RedSphere.png",
@@ -148,11 +148,22 @@
       );
 
       function Test1ClickHandler() {
-        map.setMapCenterAndLevel({x: 121.44028, y: 31.361456, level: 16});
-        map.mixinSearch({
-          geometry:{x: 121.44028, y: 31.361456},
-          radius: 1000,
-          // sort: "asc",
+        // map.setMapCenterAndLevel({x: 121.44028, y: 31.361456, level: 16});
+        // map.mixinSearch({
+        //   geometry:{x: 121.44028, y: 31.361456},
+        //   radius: 1000,
+        //   // sort: "asc",
+        //   contents: [
+        //     {
+        //       class: "overlay",
+        //       types: "sxj,police"
+        //     }
+        //   ]
+        // }, function(result) {
+        //   console.log(result);
+        // });
+        map.geometrySearch({
+          geoType:"polygon",
           contents: [
             {
               class: "overlay",
@@ -194,9 +205,11 @@
         // map.showJurisdiction();
 
         // map.startDraw({
-        //   type: "point",
+        //   type: "rectangle",
         //   continuousDraw: true,
         //   clearRepeat: true
+        // }, function (result) {
+        //   console.log(result);
         // });
         // map.deleteAllPoints();
         // map.deletePoints('{"types":["police"]}');
