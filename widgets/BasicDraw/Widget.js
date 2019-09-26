@@ -139,7 +139,9 @@ define([
       this._drawLayer.clearLayers();
     },
 
-    onMapClick: function(event) {
+    _timeout: null,
+
+    drawTemp: function(event) {
       if (this._clearRepeat && this._drawType.toLowerCase() === "point") {
         this._drawLayer.clearLayers();
         this._pointList = [];
@@ -250,6 +252,14 @@ define([
           }
           break;
       }
+    },
+
+    onMapClick: function(event) {
+      var _this = this;
+      clearTimeout(this._timeout);
+      this._timeout = setTimeout( function()  {
+        _this.drawTemp(event);
+      }, 200);
     },
 
     onMapMouseMove: function(event) {
@@ -377,6 +387,10 @@ define([
     },
 
     onMapDoubleClick: function(event) {
+      clearTimeout(this._timeout);
+
+      this.drawTemp(event);
+
       if (this._callbackFunction) {
         switch (this._drawType.toLowerCase()) {
           case "line":
@@ -388,6 +402,7 @@ define([
           case "polygon":
             this._currentPolygon.type = "polygon";
             var geometry = this._onGetDrawGraphic(this._currentPolygon);
+            console.log(geometry);
             this._callbackFunction(geometry);
             break;
         }

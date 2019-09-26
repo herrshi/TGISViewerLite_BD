@@ -623,6 +623,15 @@ define([
           return coordtransform.gcj02tobd09(x, y);
         }
       }
+      else if (mapCoordSystem === "BD09" && coordinateSystem === "GCJ02") {
+        if (!inverse) {
+          return coordtransform.gcj02tobd09(x, y);
+        }
+        //gcj02 -> bd09
+        else {
+          return coordtransform.bd09togcj02(x, y);
+        }
+      }
       //bd09 <-> wgs84
       else if (mapCoordSystem === "BD09" && coordinateSystem === "WGS84") {
         //wgs84 -> bd09

@@ -73,6 +73,19 @@ define([
         "findFeature",
         lang.hitch(this, this.onTopicHandler_findFeature)
       );
+
+      topic.subscribe(
+        "addPolygons",
+        lang.hitch(this, this.onTopicHandler_addPolygons)
+      );
+      topic.subscribe(
+        "deletePolygons",
+        lang.hitch(this, this.onTopicHandler_deletePolygons)
+      );
+      topic.subscribe(
+        "deleteAllPolygons",
+        lang.hitch(this, this.onTopicHandler_deleteAllPolygons)
+      );
     },
 
     /**将arcgis的PictureMarkerSymbol转换为leaflet的icon*/
@@ -201,19 +214,32 @@ define([
 
       paramsObj.points.forEach(function(pointObj) {
         var geometry = pointObj.geometry;
-        var visible = pointObj.visible === undefined ? defaultVisible : pointObj.visible;
+        var visible =
+          pointObj.visible === undefined ? defaultVisible : pointObj.visible;
 
         if (!isNaN(geometry.x) && !isNaN(geometry.y)) {
           //转换坐标系
-          var newXY = jimuUtils.coordTransform(geometry.x, geometry.y, false, coordinateSystem);
+          var newXY = jimuUtils.coordTransform(
+            geometry.x,
+            geometry.y,
+            false,
+            coordinateSystem
+          );
           geometry.x = newXY[0];
           geometry.y = newXY[1];
           var icon = this._getIcon(pointObj.symbol) || defaultIcon;
+          var rotationAngle = pointObj.symbol
+            ? pointObj.symbol.angle || 0
+            : paramsObj.defaultSymbol
+            ? paramsObj.defaultSymbol.angle || 0
+            : 0;
           var marker;
           if (icon !== null) {
             marker = L.marker([geometry.y, geometry.x], {
               icon: icon,
-              opacity: visible ? 1 : 0
+              opacity: visible ? 1 : 0,
+              rotationAngle: rotationAngle,
+              rotationOrigin: "center"
             });
           } else {
             marker = L.marker([geometry.y, geometry.x], {
@@ -361,6 +387,25 @@ define([
 
     onTopicHandler_deleteAllLines: function() {
       this._polylineLayer.clearLayers();
+    },
+
+    onTopicHandler_addPolygons: function(params) {
+      params.polygons.forEach(function(polygonObj) {
+        var latlngs = polygonObj.geometry.rings[0].map(function(point) {
+          return [point[1], point[0]];
+        });
+        var polygon = L.polygon(latlngs).addTo(this._polygonLayer);
+        polygon.type = polygonObj.type;
+        polygon.id = polygonObj.id;
+      }, this);
+    },
+
+    onTopicHandler_deletePolygons: function(params) {
+      this._deleteOverlay(this._polygonLayer, params.types, params.ids);
+    },
+
+    onTopicHandler_deleteAllPolygons: function() {
+      this._polygonLayer.clearLayers();
     },
 
     _flashFeature: function(feature) {

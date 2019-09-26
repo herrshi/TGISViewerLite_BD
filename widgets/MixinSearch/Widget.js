@@ -28,6 +28,11 @@ define([
         "geometrySearch",
         lang.hitch(this, this.onTopicHandler_geometrySearch)
       );
+
+      topic.subscribe(
+        "stopGeometrySearch",
+        lang.hitch(this, this.onTopicHandler_stopGeometrySearch)
+      );
     },
 
     _getGeometryType: function(geometry) {
@@ -170,6 +175,8 @@ define([
       });
     },
 
+    _poiSearch: function(poiParam) {},
+
     _overlaySearch: function(overlayParam) {
       const {
         centerGeometry,
@@ -257,6 +264,11 @@ define([
       cloned.id = marker.id;
       cloned.fields = marker.attributes;
       return cloned;
+    },
+
+    onTopicHandler_stopGeometrySearch() {
+      this._graphicsLayer.clearLayers();
+      topic.publish("clearDraw");
     }
   });
 });

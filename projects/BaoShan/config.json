@@ -3,7 +3,7 @@
     "basemaps": [
       {
         "label": "百度矢量地图",
-        "url": "http://128.64.130.247:8219/tile",
+        "url": "http://{gisServer}/tile",
         "type": "BD_vec_own",
         "visible": true
       },
@@ -31,14 +31,13 @@
       },
       {
         "label": "百度实时路况",
-        "url": "http://128.64.130.247:8219/traffic/?qt=traffic",
-        "proxyUrl":
-          "http://localhost:8090/TGISViewerLite_BD/proxy/proxy.ashx",
+        "url": "http://{gisServer}/traffic/?qt=traffic",
         "type": "BD_time_own",
         "refreshInterval": 10,
         "visible": false
       }
     ],
+    "gisServer": "128.64.151.217:8000",
     "mapOptions": {
       "center": [31.39351155, 121.4843501],
       "zoom": 15
@@ -84,11 +83,6 @@
       "uri": "widgets/BasicDraw/Widget",
       "name": "BasicDraw",
       "id": "BasicDrawWidget"
-    },
-    {
-      "uri": "widgets/GeometrySearch/Widget",
-      "name": "GeometrySearch",
-      "id": "GeometrySearchWidget"
     },
     {
       "uri": "widgets/TrackPlayback/Widget",

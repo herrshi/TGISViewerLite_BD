@@ -58,6 +58,7 @@ var TMap = {
    *            单位为px.
    *   yoffset: number, optional. 图标在纵轴上的偏移量, >0往上偏移, <0往下偏移, 原点为图标左上角.
    *            单位为px.
+   *   angle: number, optional. 旋转角度
    * @param params: string, json字符串
    *   defaultSymbol: optional, 默认样式.
    *   defaultVisible: option, 默认是否显示. 默认为true.
@@ -198,6 +199,67 @@ var TMap = {
   deleteAllLines: function() {
     require(["dojo/topic"], function(topic) {
       topic.publish("deleteAllLines");
+    });
+  },
+
+  /**
+   * 在地图上添加面覆盖物
+   * symbol: 面覆盖物的样式
+   *   color: string, optional. 颜色.
+   *     默认为#3388ff
+   *   alpha: number, optional. 透明度. 0--1, 0: 完全透明, 1: 完全不透明
+   *     默认为0.5
+   *   outline: object, optional
+   *     color: string, optional. 颜色.
+   *       默认为#3388ff
+   *     alpha: number, optional. 透明度. 0--1, 0: 完全透明, 1: 完全不透明
+   *       默认为1
+   *     width: number, optional.
+   *       默认为2
+   * @param params: string/object, json
+   *   defaultSymbol: optional, 默认样式.
+   *   polygons: [{}], required.
+   *     id: string, required. 编号
+   *     type: string, optional. 类型
+   *     fields: {}, optional. 属性
+   *       点击以后在弹出框中显示fields中的键值对
+   *     content: string, optional. html, 自定义的弹出框内容. 使用以后会覆盖fields.
+   *     geometry: object, required. 几何属性.
+   *       rings : [
+   *         [ [x11, y11], [x12, y12], ..., [x1n, y1n] ],
+   *         [ [x21, y21], [x22, y22], ..., [x2n, y2n] ],
+   *         ...,
+   *         [ [xm1, ym1], [xm2, ym2], ..., [xmn, ymn] ]
+   *       ]
+   *       一个polyline对象可以包含多段分离的折线，所有paths是一个数组. 一般情况下paths中只会有一个元素, 即一条连续折线.
+   *     symbol: object, optional. 样式.
+   *       会覆盖defaultSymbol.
+   * @sample
+   *   map.addPolygons({"polygons":[{"id":"test001","type":"area","geometry":{"type":"polygon","rings":[[[121.47304678111577,31.397380608608263],[121.4835389901274,31.397072524739393],[121.48145492121412,31.389370096185758],[121.4670101677118,31.390787390944077],[121.47304678111577,31.397380608608263]]]}}]});
+   * */
+  addPolygons: function(params) {
+    require(["dojo/topic"], function(topic) {
+      if (typeof params === "string") {
+        params = JSON.parse(params);
+      }
+      topic.publish("addPolygons", params);
+    });
+  },
+
+  /**
+   * 删除指定面覆盖物
+   * 参数同deletePoints
+   * */
+  deletePolygons: function({ ids = [], types = [] } = {}) {
+    require(["dojo/topic"], function(topic) {
+      topic.publish("deletePolygons", { ids, types });
+    });
+  },
+
+  /**删除所有面覆盖物*/
+  deleteAllPolygons: function() {
+    require(["dojo/topic"], function(topic) {
+      topic.publish("deleteAllPolygons");
     });
   },
 

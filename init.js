@@ -59,6 +59,7 @@ var dojoConfig, jimuConfig;
       window.path + "libs/leaflet/MarkerCluster/MarkerCluster.css",
       window.path + "libs/leaflet/MarkerCluster/MarkerCluster.Default.css",
       window.path + "libs/leaflet/MarkerCluster/leaflet.markercluster.js",
+      window.path + "libs/leaflet/leaflet.rotatedMarker.js",
       //Baidu for leaflet
       window.path + "libs/leaflet/Proj4Leaflet/lib/proj4.js",
       window.path + "libs/leaflet/Proj4Leaflet/src/proj4leaflet.js",
