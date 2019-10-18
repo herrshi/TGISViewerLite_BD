@@ -6,9 +6,9 @@ L.CRS.Baidu = new L.Proj.CRS(
     resolutions: (function() {
       level = 19;
       var res = [];
-      res[0] = Math.pow(2, 18);
-      for (var i = 1; i < level; i++) {
-        res[i] = Math.pow(2, 18 - i);
+      // res[0] = Math.pow(2, 18);
+      for (var i = 0; i < level; i++) {
+        res[i] = Math.pow(2, level - i - 1);
       }
       return res;
     })(),
@@ -37,7 +37,11 @@ function encode(t) {
 }
 
 L.TileLayer.BDVec = L.TileLayer.extend({
-  _url: null,
+  options: {
+    minZoom: 12,
+    maxZoom: 19
+  },
+  // _url: null,
   getTileUrl: function(coords) {
     var n = (Math.abs(coords.x) + "").replace(/-/gi, "M"),
       o = (Math.abs(coords.y) - 1 + "").replace(/-/gi, "M"),
@@ -58,8 +62,8 @@ L.TileLayer.Traffic = L.TileLayer.extend({
     return s;
   }
 });
-L.tileLayer.bdvec = function(option) {
-  return new L.TileLayer.BDVec(option);
+L.tileLayer.bdvec = function(url) {
+  return new L.TileLayer.BDVec(url);
 };
 
 L.tileLayer.traffic = function(option) {

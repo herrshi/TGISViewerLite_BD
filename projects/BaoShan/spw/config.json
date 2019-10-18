@@ -38,7 +38,9 @@
     "gisServer": "15.192.16.7:8219",
     "mapOptions": {
       "center": [31.39351155,121.4843501],
-      "zoom": 15
+      "zoom": 15,
+      "minZoom": 12,
+      "maxZoom": 19
     },
     "coordinateSystem": "BD09",
     "miniMap": {

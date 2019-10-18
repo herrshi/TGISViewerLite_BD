@@ -60,7 +60,8 @@ define([
         return L.icon({
           iconUrl: url,
           iconSize: size,
-          iconAnchor: anchor
+          iconAnchor: anchor,
+          tooltipAnchor: anchor
         });
       } else {
         return null;
@@ -74,7 +75,8 @@ define([
         zoom,
         distance,
         defaultSymbol,
-        defaultVisible
+        defaultVisible,
+        defaultTooltip
       } = params;
       const defaultIcon = this._getIcon(defaultSymbol);
 
@@ -96,7 +98,7 @@ define([
       }
 
       params.points.forEach(pointObj => {
-        const { id, geometry, fields, symbol } = pointObj;
+        const { id, geometry, fields, symbol, tooltip } = pointObj;
         if (!isNaN(geometry.x) && !isNaN(geometry.y)) {
           if (coordinateSystem) {
             const newXY = jimuUtils.coordTransform(
@@ -112,7 +114,7 @@ define([
           let marker;
           if (icon !== null) {
             marker = L.marker([geometry.y, geometry.x], {
-              icon: icon
+              icon
             });
           } else {
             marker = L.marker([geometry.y, geometry.x]);
@@ -120,17 +122,21 @@ define([
           marker.id = id;
           marker.type = type;
           marker.attributes = fields;
+          const tooltipContent = tooltip || defaultTooltip;
+          if (tooltipContent) {
+            marker.bindTooltip(tooltipContent.format(fields), {
+              sticky: true
+            });
+          }
+
           marker.addTo(layer);
 
-          marker.on(
-            "click",
-            lang.hitch(this, function(evt) {
-              const point = evt.sourceTarget || evt.target;
-              const { id, type } = point;
-              showGisDeviceInfo(type, id);
-              showGisDeviceDetailInfo(type, id, point.attributes);
-            })
-          );
+          marker.on("click", evt => {
+            const point = evt.sourceTarget || evt.target;
+            const { id, type } = point;
+            showGisDeviceInfo(type, id);
+            showGisDeviceDetailInfo(type, id, point.attributes);
+          });
         }
       });
 

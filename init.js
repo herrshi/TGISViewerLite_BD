@@ -52,7 +52,7 @@ var dojoConfig, jimuConfig;
       window.path + "libs/turf.min.js",
       //leaflet标准库
       window.path + "libs/leaflet/leaflet.css",
-      window.path + "libs/leaflet/leaflet.js",
+      window.path + "libs/leaflet/leaflet-src.js",
       //leaflet plugins
       window.path + "libs/leaflet/Control.MiniMap.css",
       window.path + "libs/leaflet/Control.MiniMap.js",
@@ -66,7 +66,8 @@ var dojoConfig, jimuConfig;
       window.path + "jimu.js/CustomLayers/tileLayer.baidu.js",
       window.path + "jimu.js/CustomLayers/trafficLayer.js",
       //dojo
-      window.path + "libs/dojo/dojo/dojo.js"
+      window.path + "libs/dojo/dojo/dojo.js",
+      window.path + "libs/string-format.js"
     ];
 
     jimuConfig = {

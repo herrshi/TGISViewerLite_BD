@@ -41,10 +41,8 @@ function _drawTrafficLayer(x, y, z, url, proxyUrl) {
   };
   if (proxyUrl) {
     proxyUrl = proxyUrl + "?";
-  }
-  else
-  {
-      proxyUrl=""
+  } else {
+    proxyUrl = "";
   }
   var reqUrl =
     proxyUrl +

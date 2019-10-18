@@ -285,6 +285,7 @@ var TMap = {
     defaultVisible = true,
     defaultSymbol = {},
     defaultInfoTemplate = {},
+    defaultTooltip = "",
     distance = 100,
     zoom = null,
     coordinateSystem = null
@@ -296,6 +297,7 @@ var TMap = {
         defaultVisible,
         defaultSymbol,
         defaultInfoTemplate,
+        defaultTooltip,
         distance,
         zoom,
         coordinateSystem
